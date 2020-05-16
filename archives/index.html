@@ -1,306 +1,311 @@
 <html>
-  <head>
-    
-<meta charset="utf-8" >
-
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Canaan&#39;s Notes</title>
-<meta name="description" content="Stay Hungry, Stay Foolish.">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://notes.canlv.top/favicon.ico?v=1589611257616">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://notes.canlv.top/favicon.ico?v=1589612720270">
+<link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://notes.canlv.top/styles/main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/go.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-
-
-  </head>
-  <body>
-    <div id="app" class="main">
-      <div class="site-header-container">
-  <div class="site-header">
-    <div class="left">
-      <a href="https://notes.canlv.top">
-        <img class="avatar" src="https://notes.canlv.top/images/avatar.png?v=1589611257616" alt="" width="32px" height="32px">
-      </a>
-      <a href="https://notes.canlv.top">
-        <h1 class="site-title">Canaan&#39;s Notes</h1>
-      </a>
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            Canaan&#39;s Notes
+        </div>
     </div>
-    <div class="right">
-      <transition name="fade">
-        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
-      </transition>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
     </div>
-  </div>
-</div>
+</nav>
 
-<transition name="fade">
-  <div class="menu-container" style="display: none;" v-show="menuVisible">
-    <div class="menu-list">
-      
         
-          <a href="/" class="menu purple-link">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="menu purple-link">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="menu purple-link">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="menu purple-link">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-</transition>
-
-
-        <div class="content-container">
-          
-          
 
 <div class="archives-container">
-  
-    <h2 class="year">2019</h2>
     
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/Rectifier-bridge/">
-            <h2 class="post-title">
-              【电设备赛】低发热整流桥（开源附AD工程）
-              <small>2019-09-07</small>
-            </h2>
-          </a>
-        </article>
-      
+        <h2 class="year gt-c-cotent-color-first">2019</h2>
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/Rectifier-bridge/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-09-07&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            【电设备赛】低发热整流桥（开源附AD工程）
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/Sepic-Power/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-09-07&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            【电设备赛】多路可调升降压辅助电源（开源附AD工程）
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/PFC-with-DIODE/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-09-07&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            【电设备赛】二极管功率因数校正模块（开源附AD工程）
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/STM32F407/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-09-07&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            【电设备赛】通用STM32F407最小系统开发板（开源附AD工程）
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/Three-phase-Inverter/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-09-07&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            【电设备赛】三相逆变模块（开源附AD工程）
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/rms/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-09-07&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            【电设备赛】真有效值RMS转换电路（开源附AD工程）
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/buck-boost-module/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-09-07&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            【电设备赛】双向DC-DC可控电压变换器模块（开源附AD工程）
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/全桥可控逆变器设计/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-09-07&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            【电设备赛】全桥可控逆变整流器Inverter&amp;Rectifier模块（开源附AD工程）
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/2019年全国大学生电子设计竞赛-纸张计数显示装置-F题/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-09-05&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            2019年全国大学生电子设计竞赛-纸张计数显示装置(F题)-湖南赛区二等奖
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/从0一步一步制作属于你自己的机械键盘/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-05-23&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            从0一步一步制作属于你自己的机械键盘
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/对于交流电路中电感的一点理解/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-05-16&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            对于交流电路中电感的一点理解
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/Macbook-Pro-13-Early-2015-更换东芝XG3-512G-SSD经历、休眠与耗电报告/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-05-10&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            Macbook Pro 13 Early 2015 更换东芝XG3 512G SSD经历、休眠与耗电报告
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/Github上部署Hexo博客（建站-优化-CDN加速-SSL）/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-05-09&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            Mac环境下在Github上部署Hexo博客（建站+Next主题优化+个人域名+免费CDN加速+SSL）
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/AD中把修改后的原件封装更新到当前PCB中/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-05-09&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            AD中把修改后的原件封装更新到当前PCB中
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/关于逆变交流电的一些理解/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-05-09&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            关于逆变交流电的一些理解
+                        </div>
+                    </a>
+                </article>
+            
+        
+            
+                <article class="post">
+                    <a href="https://notes.canlv.top/post/一款可行的能量回馈装置/">
+                        <div class="post-title gt-c-content-color-first">
+                            <small><b>2019-05-08&nbsp;&nbsp;·&nbsp;&nbsp;</b></small>
+                            一款可行的能量回馈装置
+                        </div>
+                    </a>
+                </article>
+            
+        
     
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/Sepic-Power/">
-            <h2 class="post-title">
-              【电设备赛】多路可调升降压辅助电源（开源附AD工程）
-              <small>2019-09-07</small>
-            </h2>
-          </a>
-        </article>
-      
+</div>
+
+        <div class="pagination-container">
     
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/PFC-with-DIODE/">
-            <h2 class="post-title">
-              【电设备赛】二极管功率因数校正模块（开源附AD工程）
-              <small>2019-09-07</small>
-            </h2>
-          </a>
-        </article>
-      
     
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/STM32F407/">
-            <h2 class="post-title">
-              【电设备赛】通用STM32F407最小系统开发板（开源附AD工程）
-              <small>2019-09-07</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/Three-phase-Inverter/">
-            <h2 class="post-title">
-              【电设备赛】三相逆变模块（开源附AD工程）
-              <small>2019-09-07</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/rms/">
-            <h2 class="post-title">
-              【电设备赛】真有效值RMS转换电路（开源附AD工程）
-              <small>2019-09-07</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/buck-boost-module/">
-            <h2 class="post-title">
-              【电设备赛】双向DC-DC可控电压变换器模块（开源附AD工程）
-              <small>2019-09-07</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/全桥可控逆变器设计/">
-            <h2 class="post-title">
-              【电设备赛】全桥可控逆变整流器Inverter&amp;Rectifier模块（开源附AD工程）
-              <small>2019-09-07</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/2019年全国大学生电子设计竞赛-纸张计数显示装置-F题/">
-            <h2 class="post-title">
-              2019年全国大学生电子设计竞赛-纸张计数显示装置(F题)-湖南赛区二等奖
-              <small>2019-09-05</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/从0一步一步制作属于你自己的机械键盘/">
-            <h2 class="post-title">
-              从0一步一步制作属于你自己的机械键盘
-              <small>2019-05-23</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/对于交流电路中电感的一点理解/">
-            <h2 class="post-title">
-              对于交流电路中电感的一点理解
-              <small>2019-05-16</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/Macbook-Pro-13-Early-2015-更换东芝XG3-512G-SSD经历、休眠与耗电报告/">
-            <h2 class="post-title">
-              Macbook Pro 13 Early 2015 更换东芝XG3 512G SSD经历、休眠与耗电报告
-              <small>2019-05-10</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/Github上部署Hexo博客（建站-优化-CDN加速-SSL）/">
-            <h2 class="post-title">
-              Mac环境下在Github上部署Hexo博客（建站+Next主题优化+个人域名+免费CDN加速+SSL）
-              <small>2019-05-09</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/AD中把修改后的原件封装更新到当前PCB中/">
-            <h2 class="post-title">
-              AD中把修改后的原件封装更新到当前PCB中
-              <small>2019-05-09</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/关于逆变交流电的一些理解/">
-            <h2 class="post-title">
-              关于逆变交流电的一些理解
-              <small>2019-05-09</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-      
-        <article class="post">
-          <a href="https://notes.canlv.top/post/一款可行的能量回馈装置/">
-            <h2 class="post-title">
-              一款可行的能量回馈装置
-              <small>2019-05-08</small>
-            </h2>
-          </a>
-        </article>
-      
-    
-  
 </div>
 
 
-        </div>
-
-        <div class="site-footer">
-  <div class="slogan">Stay Hungry, Stay Foolish.</div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-  Since 2017 | <a class="rss" href="https://notes.canlv.top/atom.xml" target="_blank">RSS</a>
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">Stay Hungry, Stay Foolish.</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Since 2017
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://notes.canlv.top/atom.xml" target="_blank">RSS</a></a>
+    </div>
 </div>
 
-
-      </div>
-      <script type="application/javascript">
-
-hljs.initHighlightingOnLoad()
-
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
-
+<script>
+    hljs.initHighlightingOnLoad()
 </script>
 
-
-
-
     </div>
-  </body>
+</div>
+</body>
 </html>
