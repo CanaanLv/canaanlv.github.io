@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>【电设备赛】多路可调升降压辅助电源（开源附AD工程） | Canaan&#39;s Notes</title>
+<title>优化你的Word论文写作流程 | Canaan&#39;s Notes</title>
 <link rel="shortcut icon" href="https://notes.canlv.top/favicon.ico?v=1589620910928">
 <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://notes.canlv.top/styles/main.css">
@@ -87,98 +87,58 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    【电设备赛】多路可调升降压辅助电源（开源附AD工程）
+                    优化你的Word论文写作流程
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2019-09-07 ·
+                        · 2020-05-16 ·
                     </time>
                     
-                        <a href="https://notes.canlv.top/tag/mllH7cYz7/" class="post-tags">
-                            # 电源
+                        <a href="https://notes.canlv.top/tag/_ySenZC4h/" class="post-tags">
+                            # 论文技巧
                         </a>
                     
-                        <a href="https://notes.canlv.top/tag/PyUqHuqSY7/" class="post-tags">
-                            # 模块
-                        </a>
-                    
-                        <a href="https://notes.canlv.top/tag/adPEcCWmuY/" class="post-tags">
-                            # 电赛
-                        </a>
-                    
-                        <a href="https://notes.canlv.top/tag/k9NGW0k85_/" class="post-tags">
-                            # 辅助电源
+                        <a href="https://notes.canlv.top/tag/U7ye13NiiV/" class="post-tags">
+                            # Endnote
                         </a>
                     
                 </div>
                 <div class="post-content">
-                    <p>实用升降压多路可调辅助电源</p>
+                    <p>为什么不用LaTeX写论文？因为学校要求提交Word论文...<br>
+所以，你有必要提前优化一下你的写作流程。</p>
 <!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v1.0-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--SP--01-orange" alt="model:CL-SP-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
-<div align=center >{% btn https://github.com/CanaanLv/Sepic-Power, 前往Github下载, download fa-lg fa-fw %}
-<br></div>
-<figure data-type="image" tabindex="1"><img src="/images/demoSP.jpg" alt="demoSP" loading="lazy"></figure>
-<h1 id="模块描述">模块描述</h1>
-<p>XL6009多路可调升降压辅助电源经过精心布线，有三路可调可供选择。还配置二极管整流桥，方便交流供电使用。</p>
-<h1 id="功能特性">功能特性</h1>
-<p>模块具备以下功能特性：</p>
+<p>当你尝试直接用Word写论文时，你一定会遇到输入公式的艰难、锯齿严重的流程图、混乱不堪的目录结构、调整论文顺序的绝望、引用公式图表的灾难、编排页码的茫然...如果你遇到了这样的问题，不如和我一起首先优化一下你的写作流程。</p>
+<blockquote>
+<p>本文仅讨论操作系统为macOS的环境，软件均为macOS版本，如有Windows版本均可适用本文方法。</p>
+</blockquote>
+<h1 id="准备工作">准备工作</h1>
+<h2 id="所需软件">所需软件</h2>
+<p>工欲善其事，必先利其器。你只需要准备三个软件：<br>
+<img src="https://i.loli.net/2020/05/16/ye7BVWwESQ9C1i6.png" alt="ye7BVWwESQ9C1i6" loading="lazy"></p>
 <ul>
-<li>电源具备三路不同的可调输出，同步多个输出口。</li>
-<li>每一路都有跳线帽作为使能开关。</li>
-<li>配备二极管整流桥，方便交流供电。</li>
-<li>电路空间较小，元件排布密集。</li>
+<li>Word那不用说。Mac和Win平台，体验相同。</li>
+<li>Endnote X9是一款文献管理软件，带有Word插件，集中管理文献，自动生成不同引文格式、编号，与导师远程协作。高校一般都有购买，可从校图书馆查到。Mac和Win平台，体验相同。</li>
+<li>Get Plain Text是擦除复制文本的格式。Mac独占，Win平台有各种同类软件。</li>
 </ul>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-使用时请注意最大耐压值。<br>
-{% endnote %}</p>
-<h1 id="数据参数">数据参数</h1>
-<p>具体参数可参考下表：</p>
-<p>{% note warning %}<br>
-<strong>⚠️警告⚠️</strong></p>
-<ul>
-<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下正常工作。请保护好自己的安全！</li>
-<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
-{% endnote %}</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">项目</th>
-<th style="text-align:center">峰值</th>
-<th style="text-align:center">建议典型值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">输入电压</td>
-<td style="text-align:center">0V～50V</td>
-<td style="text-align:center">10V～40V</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电压</td>
-<td style="text-align:center">0V～Vcc</td>
-<td style="text-align:center">3.3V、5V、12V、15V</td>
-</tr>
-</tbody>
-</table>
-<h1 id="元件需求">元件需求</h1>
-<p>本模块需要以下（常用电子元件以及封装请查看工程文档）：</p>
-<ul>
-<li>XL6009</li>
-</ul>
-<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
-<p>电路下图所示：</p>
-<figure data-type="image" tabindex="2"><img src="/images/sp-img1.jpg" alt="sp-img1" loading="lazy"></figure>
-<p>电路要求并不是很高，可通过调整电位器对输出电压进行调整。</p>
-<p>作者使用STM32F407最小系统板（已开源），有关作者使用的STM32开源工程，您可以查看这个链接：<a href="https://notes.canlv.top/2019/09/07/STM32F407/">点击前往</a></p>
-<h1 id="版本更新">版本更新</h1>
-<ul>
-<li>v1.0 正常使用。正式开源</li>
-</ul>
-<h1 id="license">License</h1>
-<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
+<h2 id="文献整理">文献整理</h2>
+<p>建议你从一开始就使用Endnote来整理你的文献，知网、百度学术、谷歌学术都有相应的Endnote格式下载。导入文献后需要安装<code>Chinese Std GBT7714</code>的Style，这是国标GB3469-83《文献类型与文献载体代码》所确定的文献格式，你可以从<a href="https://www.endnote.com/downloads/styles/">Endnote官网</a>搜索<code>GBT7714</code>查找到作者标与数字标两个版本。如果学校有特殊格式要求，可简单修改这两个标准版本。</p>
+<h1 id="建立文档">建立文档</h1>
+<p>大部分中国大陆高等院校会提供一个Word模版给你参考，研究生论文模版相对来说较为标准，可以拿来直接用。但是本科生却不一定。多年未跟新导致注释甚至与文档数据不同，所以，如果贵校的论文模版质量很糟糕的话，建议自己建立新的空文档，通过要求自己设置。</p>
+<p>假设你建立了空文档，许多人包括老师都告诉你：「不用管格式，写好之后再调整格式。」这样的写作流程并没有什么问题，但是你总时不时会卡在各种微小的细节上。</p>
+<h1 id="文档格式">文档格式</h1>
+<h2 id="大标题与小标题">大标题与小标题</h2>
+<p>本文建议你在调整文本格式的时候通过「样式窗格」调整，便于后期统一调整格式。而且此种方法能够让你直接生成自动目录与多级列表。</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/05/16/K9sjkW8Itz1PgEO.png" alt="Word默认样式窗格" loading="lazy"></figure>
+<p>这是Word默认的样式窗格，在你编写各种大小标题的时候，请按照以下对应关系选择样式。</p>
+<pre><code> - 第1章 ==&gt; 标题1
+ - - 1.1 ==&gt; 标题2
+ - - - 1.1.1 ==&gt; 标题3
+</code></pre>
+<p>此后当你修改某个标题的格式后，仅需修改样式即可自动全部更新。为标题设置多级列表时，修改某一标题的样式，在<code>编号</code>-<code>多级编号</code>-<code>自定义</code>中，将1、2、3级标题分别链接至上述的三个标题样式，便可以制作自动编号的列表。</p>
+<h2 id="图表">图表</h2>
+<p>图表编号较为简单，只需在插入图表后右键，选择插入题注，即可按照论文要求插入全文编号或者章节编号的题注。引用时，在菜单中选择<code>插入</code>-<code>交叉引用</code>即可插入编号，后续修改也无需担心顺序混乱。修改后选中全文右键，选择<code>更新域</code>即可全部刷新。</p>
+<h2 id="公式">公式</h2>
+<p>Word公式插入可借助外部软件完成。如果用内置公式编辑器也可以支持LaTeX。但是公式编号需要借助表格法。创建一个1x3的表格，在中间表格插入公式，然后全选表格右键插入题注，将题注设置为「公式」并编号。你会在表格上方或下方得到一个题注编号。选中并剪切编号（注意不要清除文本格式），粘贴在右侧表格并调整文本格式。之后选中整个表格，在<code>插入</code>-<code>公式</code>选择<code>将公式保存到库</code>即可。在下次直接选择此公式即可生成一个带有公式和编号的表格了。</p>
 
                 </div>
             </article>
@@ -187,8 +147,8 @@
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://notes.canlv.top/post/PFC-with-DIODE/" class="post-title gt-a-link">
-                    【电设备赛】二极管功率因数校正模块（开源附AD工程）
+                <a href="https://notes.canlv.top/post/Rectifier-bridge/" class="post-title gt-a-link">
+                    【电设备赛】低发热整流桥（开源附AD工程）
                 </a>
             </div>
         
