@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>【电设备赛】真有效值RMS转换电路（开源附AD工程） | Canaan&#39;s Notes</title>
+<meta name="description" content="Stay Hungry, Stay Foolish.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://canaanlv.github.io/favicon.ico?v=1589610278882">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://canaanlv.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://canaanlv.github.io">
+        <img class="avatar" src="https://canaanlv.github.io/images/avatar.png?v=1589610278882" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://canaanlv.github.io">
+        <h1 class="site-title">Canaan&#39;s Notes</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">【电设备赛】真有效值RMS转换电路（开源附AD工程）</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-09-07</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://canaanlv.github.io/tag/mllH7cYz7/">
+                    电源
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/PyUqHuqSY7/">
+                    模块
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/adPEcCWmuY/">
+                    电赛
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/1LNLwU8T3E/">
+                    RMS
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/byAC3_m9UA/">
+                    真有效值
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>具有隔离功能的真有效值RMS转换模块</p>
+<!-- more -->
+<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
+<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v1.3-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--RMS--01-orange" alt="model:CL-RMS-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
+<div align=center >{% btn https://github.com/CanaanLv/RMS, 前往Github下载, download fa-lg fa-fw %}
+<br></div>
+<figure data-type="image" tabindex="1"><img src="/images/demoRMS.jpg" alt="demoRMS" loading="lazy"></figure>
+<h1 id="模块描述">模块描述</h1>
+<p>真有效值RMS转换模块使用互感器、RMS计算器、运放组成，模块具有输入隔离效果，其高精度可应用于大功率与小信号等多种场合。</p>
+<h1 id="功能特性">功能特性</h1>
+<p>模块具备以下功能特性：</p>
+<ul>
+<li>差分输入的真有效值RMS转换芯片。</li>
+<li>输入具有隔离功能。</li>
+<li>模块各个器件的缩小与放大比例均可调。</li>
+<li>输出配有放大器，提高采样宽度。</li>
+</ul>
+<p>{% note info %}<br>
+<strong>注意：</strong><br>
+此模块需要另外的5V与12V的芯片供电电压<br>
+{% endnote %}</p>
+<h1 id="数据参数">数据参数</h1>
+<p>具体参数可参考下表：</p>
+<p>{% note warning %}<br>
+<strong>⚠️警告⚠️</strong></p>
+<ul>
+<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下正常工作。请保护好自己的安全！</li>
+<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
+{% endnote %}</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目</th>
+<th style="text-align:center">峰值</th>
+<th style="text-align:center">建议典型值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">采样电压</td>
+<td style="text-align:center">0V～500V</td>
+<td style="text-align:center">10V～60V</td>
+</tr>
+<tr>
+<td style="text-align:left">采样电流</td>
+<td style="text-align:center">0V～10A</td>
+<td style="text-align:center">0A～2A</td>
+</tr>
+<tr>
+<td style="text-align:left">输出采样电压</td>
+<td style="text-align:center">0A～Vcc</td>
+<td style="text-align:center">0A～3.3V</td>
+</tr>
+</tbody>
+</table>
+<h1 id="元件需求">元件需求</h1>
+<p>本模块需要以下（常用电子元件以及封装请查看工程文档）：</p>
+<ul>
+<li>LTC1966</li>
+<li>运放</li>
+<li>互感器</li>
+</ul>
+<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
+<h2 id="电流rms转换电路">电流RMS转换电路</h2>
+<p>电流RMS转换电路下图所示：</p>
+<figure data-type="image" tabindex="2"><img src="/images/rms-img1.jpg" alt="rms-img1" loading="lazy"></figure>
+<p>其中R7为电流互感器比例调整电阻，由于LTC1966的差分输入端的峰峰值承受电压为1V，所以在正式通电之前务必在低压环境调整好比例。</p>
+<p>{% note info %}<br>
+<strong>注意：</strong><br>
+LTC1966的差分输入端对电压极为敏感，在正式通电之前一定要对互感器输出有所把握。<br>
+{% endnote %}</p>
+<p>可调运算放大器之后串接跟随器。</p>
+<p>输出串接LC滤波电路，根据需要选择不同的滤波器。</p>
+<h2 id="电压rms转换电路">电压RMS转换电路</h2>
+<p>电路图如下：</p>
+<figure data-type="image" tabindex="3"><img src="/images/rms-img2.jpg" alt="rms-img2" loading="lazy"></figure>
+<p>其中R1、R13为电压互感器比例调整电阻，由于LTC1966的差分输入端的峰峰值承受电压为1V，所以在正式通电之前务必在低压环境调整好比例。</p>
+<p>{% note info %}<br>
+<strong>注意：</strong><br>
+LTC1966的差分输入端对电压极为敏感，在正式通电之前一定要对互感器输出有所把握。<br>
+{% endnote %}</p>
+<p>可调运算放大器之后串接跟随器。</p>
+<p>输出串接LC滤波电路，根据需要选择不同的滤波器。</p>
+<h1 id="版本更新">版本更新</h1>
+<ul>
+<li>v1.3 第一次打样，正式开源。</li>
+<li>v1.2 正常使用。</li>
+<li>v1.0 部分布线问题，导致LTC1966烧毁</li>
+</ul>
+<h1 id="license">License</h1>
+<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://canaanlv.github.io/post/buck-boost-module/">
+              <h3 class="post-title">
+                下一篇：【电设备赛】双向DC-DC可控电压变换器模块（开源附AD工程）
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+
+        
+          <div id="disqus_thread"></div>
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">Stay Hungry, Stay Foolish.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Since 2017 | <a class="rss" href="https://canaanlv.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'GrideaSites',
+      apikey: 't52B3WQNyehWeijDFY6fiCDWPuFyqvvzJXoX509hL6rWNnj3gQd0cHCsXReqsbfr',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>

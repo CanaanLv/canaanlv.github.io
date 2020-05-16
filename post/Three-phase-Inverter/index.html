@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>【电设备赛】三相逆变模块（开源附AD工程） | Canaan&#39;s Notes</title>
+<meta name="description" content="Stay Hungry, Stay Foolish.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://canaanlv.github.io/favicon.ico?v=1589610278882">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://canaanlv.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://canaanlv.github.io">
+        <img class="avatar" src="https://canaanlv.github.io/images/avatar.png?v=1589610278882" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://canaanlv.github.io">
+        <h1 class="site-title">Canaan&#39;s Notes</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">【电设备赛】三相逆变模块（开源附AD工程）</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-09-07</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://canaanlv.github.io/tag/mllH7cYz7/">
+                    电源
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/PyUqHuqSY7/">
+                    模块
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/adPEcCWmuY/">
+                    电赛
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/SgQ9Uvcjzs/">
+                    三相逆变
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/LOPnY79IBb/">
+                    逆变
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>简单实现直流到三相电的转换</p>
+<!-- more -->
+<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
+<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v1.1-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--TPI--01-orange" alt="model:CL-TPI-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
+<div align=center >{% btn https://github.com/CanaanLv/Three-phase-Inverter, 前往Github下载, download fa-lg fa-fw %}
+<br></div>
+<figure data-type="image" tabindex="1"><img src="/images/demoTPI.jpg" alt="demoTPI" loading="lazy"></figure>
+<h1 id="模块描述">模块描述</h1>
+<p>三相逆变模块是一块仅需少量、廉价且简单的电子元件，即可实现将直流电转化为三相电的功能。并且能够稳定承受100W的功率。模块还具有过载保护功能。</p>
+<h1 id="功能特性">功能特性</h1>
+<p>模块具备以下功能特性：</p>
+<ul>
+<li>模块支持PWM、SPWM等控制信号。可单独控制每一个开关管</li>
+<li>具有过载保护功能。</li>
+<li>上下桥臂内置死区，无需担心短路问题。</li>
+<li>MOSFIT管基极具有电荷释放电路，防止电荷积累击穿MOS管。</li>
+<li>驱动电阻方便更换调整。</li>
+<li>使用电阻更小的香蕉头接线柱。</li>
+<li>可设置外部程序使能，提供手动保护功能。</li>
+<li>留有RCD吸收回路，以备应急使用。</li>
+<li>留有大量测试点，方便调试。</li>
+</ul>
+<p>{% note info %}<br>
+<strong>注意：</strong><br>
+此模块需要另外的15V的芯片供电电压<br>
+{% endnote %}</p>
+<h1 id="数据参数">数据参数</h1>
+<p>具体参数可参考下表：</p>
+<p>{% note warning %}<br>
+<strong>⚠️警告⚠️</strong></p>
+<ul>
+<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下正常工作。请保护好自己的安全！</li>
+<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
+{% endnote %}</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目</th>
+<th style="text-align:center">峰值</th>
+<th style="text-align:center">建议典型值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">输入电压</td>
+<td style="text-align:center">0V～100V</td>
+<td style="text-align:center">10V～60V</td>
+</tr>
+<tr>
+<td style="text-align:left">输出电压（线电压有效值）</td>
+<td style="text-align:center">0V～120V</td>
+<td style="text-align:center">36V</td>
+</tr>
+<tr>
+<td style="text-align:left">输入电流</td>
+<td style="text-align:center">0A～4A</td>
+<td style="text-align:center">0A～2A</td>
+</tr>
+<tr>
+<td style="text-align:left">输出电流（线电流有效值）</td>
+<td style="text-align:center">0A～4A</td>
+<td style="text-align:center">0A～2A</td>
+</tr>
+<tr>
+<td style="text-align:left">内置芯片供电电压</td>
+<td style="text-align:center">0V～21V</td>
+<td style="text-align:center">15V</td>
+</tr>
+<tr>
+<td style="text-align:left">控制信号电压</td>
+<td style="text-align:center">0V～5V</td>
+<td style="text-align:center">5V、3.3V</td>
+</tr>
+</tbody>
+</table>
+<h1 id="元件需求">元件需求</h1>
+<p>本模块需要以下（常用电子元件以及封装请查看工程文档）：</p>
+<ul>
+<li>IRF540N</li>
+<li>IR2136</li>
+</ul>
+<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
+<h2 id="三桥臂电路">三桥臂电路</h2>
+<p>电路下图所示：</p>
+<figure data-type="image" tabindex="2"><img src="/images/tpi-img1.jpg" alt="tpi-img1" loading="lazy"></figure>
+<p>其中R19～R24是较为重要的元件，电阻的作用是在基极状态变换时缓解电压突变、而电流无法突变时，对MOSFIT产生的巨大冲击。其阻值微小的变化就可能对输出波形的尖峰与振铃带来可观的缓解。</p>
+<p>{% note info %}<br>
+<strong>注意：</strong><br>
+本模块中这些电阻的大小建议使用50欧姆以上。如果您使用20欧姆，操作不当，很有可能导致驱动器损坏。<br>
+{% endnote %}</p>
+<p>另外也可以通过在直流电对地并联大容量电解电容、高频陶瓷电容缓解电压中的不稳定因素。</p>
+<p>ITRIP接口是电流采样接口，R27是采样电阻，阻值选用0.025欧姆。</p>
+<h2 id="驱动控制电路">驱动控制电路</h2>
+<p>电路图如下：</p>
+<figure data-type="image" tabindex="3"><img src="/images/tpi-img2.jpg" alt="tpi-img2" loading="lazy"></figure>
+<p>此电路中，C9～C11自举电容的作用将成为理解电路的关键。自举电容就是在低端管开通时充电积攒电压；在高端管将要开通时，将积攒的电压叠加在源极上传输给基极，实现高端管的开通。此电容的容值不必很大，使用钽电容也可达到同样的效果。</p>
+<p>管脚10为使能端，已通过排针接出。</p>
+<h1 id="软件支持">软件支持</h1>
+<p>您可以使用各类MCU、FPGA，生成驱动能力较强的PWM、SPWM波形，为模块提供控制信号。建议添加光耦隔离对主控进行保护。</p>
+<p>作者使用STM32F407最小系统板（已开源），利用内置时钟直接生成PWM与SPWM波供给模块，亦可应付大部分应用场景。</p>
+<p>有关作者使用的STM32开源工程，您可以查看这个链接：<a href="https://notes.canlv.top/2019/09/07/STM32F407/">点击前往</a></p>
+<h1 id="版本更新">版本更新</h1>
+<ul>
+<li>v1.1 正常使用。正式开源</li>
+<li>v1.0 部分布线问题</li>
+</ul>
+<h1 id="license">License</h1>
+<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://canaanlv.github.io/post/rms/">
+              <h3 class="post-title">
+                下一篇：【电设备赛】真有效值RMS转换电路（开源附AD工程）
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+
+        
+          <div id="disqus_thread"></div>
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">Stay Hungry, Stay Foolish.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Since 2017 | <a class="rss" href="https://canaanlv.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'GrideaSites',
+      apikey: 't52B3WQNyehWeijDFY6fiCDWPuFyqvvzJXoX509hL6rWNnj3gQd0cHCsXReqsbfr',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>

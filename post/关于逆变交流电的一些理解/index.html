@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>关于 | Canaan&#39;s Notes</title>
+<title>关于逆变交流电的一些理解 | Canaan&#39;s Notes</title>
 <meta name="description" content="Stay Hungry, Stay Foolish.">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -86,24 +86,47 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">关于</h2>
+          <h2 class="post-title">关于逆变交流电的一些理解</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-01-25</span>
+            <span><i class="icon-calendar-outline"></i> 2019-05-09</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://canaanlv.github.io/tag/mllH7cYz7/">
+                    电源
+                    
+                  </a>
+                
+              </span>
             
           </div>
           <div class="post-content">
-            <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+            <p>曾经我对于交流电的认识是基于直流电出发理解的。直流电的电压不变且为正；交流电的电压在变化，且有正有负。但是，这种固化的思维却给我后续的测试中带来一些困扰。</p>
+<!-- more -->
+<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
+<h1 id="直流与交流">直流与交流</h1>
+<h2 id="直流">直流</h2>
+<p>在我们的常识中，直流电就是具有正负两级，其实这没有问题。实际上，在我长时间的测试中，我认为的直流电能看做是：相对于负极的参考端来说，正极上的电压始终大于负极，不论他的电压值是否在变化。</p>
+<p>我们常说的电路中的「地」指的是就是这个「负极」。</p>
+<h2 id="交流">交流</h2>
+<p>说到交流就更有意思了。首先，来看我们常见的220V交流市电。装过开关或者灯泡的同学一定知道，市电中有三根线：火线、零线、地线。零线与地线相对于人体都是安全的，所以电压与电流是传输在火线之上的。可以看作零线对「地线」是等电势的。</p>
+<p>但是对于直流逆变交流器来说，交流电压是通过不断翻转负载两端的正负极来实现的，输出的两根交流导线之间没有零火线之分，所以当我们用平时处理交流市电的方式处理逆变交流电时难免会出现问题，如果在使用前不对其进行隔离，还有可能产生直流正负极耦合的现象。</p>
+<h1 id="耦合现象">耦合现象</h1>
+<p>关于这一点，如果我们使用SPWM波来控制逆变产生交流电时，假设产生50Hz的交流电，对于SPWM波来说，大周期为1/50秒。然而每一个大周期内还有等面积法产生的小周期，这些小周期内，全桥逆变的四个MOS管在不停的在开通关断两个状态之间转换，但是输出级拿到的波形中，只保留了50Hz这一个数据，内部的小周期数据全部丢失了。如果一旦后级与逆变的供电部分有连接，及其容易产生耦合电路。所以这也可以看作一个SPWM全桥逆变黑盒子，损失了一部分信息。</p>
 
           </div>
         </div>
 
         
+          <div class="next-post">
+            <a class="purple-link" href="https://canaanlv.github.io/post/一款可行的能量回馈装置/">
+              <h3 class="post-title">
+                下一篇：一款可行的能量回馈装置
+              </h3>
+            </a>
+          </div>
+          
       </div>
 
       

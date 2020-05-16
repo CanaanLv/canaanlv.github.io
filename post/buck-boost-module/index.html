@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>【电设备赛】双向DC-DC可控电压变换器模块（开源附AD工程） | Canaan&#39;s Notes</title>
+<meta name="description" content="Stay Hungry, Stay Foolish.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://canaanlv.github.io/favicon.ico?v=1589610278882">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://canaanlv.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://canaanlv.github.io">
+        <img class="avatar" src="https://canaanlv.github.io/images/avatar.png?v=1589610278882" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://canaanlv.github.io">
+        <h1 class="site-title">Canaan&#39;s Notes</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">【电设备赛】双向DC-DC可控电压变换器模块（开源附AD工程）</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-09-07</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://canaanlv.github.io/tag/mllH7cYz7/">
+                    电源
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/PyUqHuqSY7/">
+                    模块
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/adPEcCWmuY/">
+                    电赛
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/PSbqVTLFA1/">
+                    升压
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/IXqmLFyx0J/">
+                    降压
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>双向DC-DC升压与降压变换器模块</p>
+<!-- more -->
+<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
+<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v2.1-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--BB--01-orange" alt="model:CL-BB-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
+<div align=center >{% btn https://github.com/CanaanLv/Buck-Boost, 前往Github下载, download fa-lg fa-fw %}
+<br></div>
+<figure data-type="image" tabindex="1"><img src="/images/demoBB.jpg" alt="demoBB" loading="lazy"></figure>
+<h1 id="模块描述">模块描述</h1>
+<p>双向DC-DC升压与降压变换器在满足基础升压与降压功能的基础上，拓展了多种附属电路与功能。还能够维持较高的工作效率。</p>
+<h1 id="功能特性">功能特性</h1>
+<p>模块具备以下功能特性：</p>
+<ul>
+<li>模块支持PWM、SPWM等控制信号</li>
+<li>使用同步整流大幅提升效率，两只开关管可单独控制</li>
+<li>MOSFIT管基极具有电荷释放电路，防止电荷积累击穿MOS管。</li>
+<li>在输入与输出端口留有电压与电流采样电路。</li>
+<li>输入与输出预留万用表探测接口，方便测试。</li>
+<li>驱动电阻方便更换调整。</li>
+<li>关键供电点设置有低通滤波器电路位置，不用时短接即可。</li>
+<li>使用电阻更小的香蕉头接线柱。</li>
+</ul>
+<p>{% note info %}<br>
+<strong>注意：</strong><br>
+此模块需要另外的12V与5V为内置芯片供电。<br>
+{% endnote %}</p>
+<h1 id="数据参数">数据参数</h1>
+<p>具体参数可参考下表：</p>
+<p>{% note warning %}<br>
+<strong>⚠️警告⚠️</strong></p>
+<ul>
+<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下长时间正常工作。请保护好自己的安全！</li>
+<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
+{% endnote %}</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目</th>
+<th style="text-align:center">峰值</th>
+<th style="text-align:center">建议典型值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">输入电压</td>
+<td style="text-align:center">0V～100V</td>
+<td style="text-align:center">10V～60V</td>
+</tr>
+<tr>
+<td style="text-align:left">输出电压</td>
+<td style="text-align:center">0V～100V</td>
+<td style="text-align:center">10V～60V</td>
+</tr>
+<tr>
+<td style="text-align:left">输入电流</td>
+<td style="text-align:center">0A～4A</td>
+<td style="text-align:center">0A～2A</td>
+</tr>
+<tr>
+<td style="text-align:left">输出电流</td>
+<td style="text-align:center">0A～4A</td>
+<td style="text-align:center">0A～2A</td>
+</tr>
+<tr>
+<td style="text-align:left">内置芯片供电电压</td>
+<td style="text-align:center">0V～12V</td>
+<td style="text-align:center">5V、12V</td>
+</tr>
+<tr>
+<td style="text-align:left">控制信号电压</td>
+<td style="text-align:center">0V～5V</td>
+<td style="text-align:center">5V、3.3V</td>
+</tr>
+</tbody>
+</table>
+<h1 id="元件需求">元件需求</h1>
+<p>本模块需要以下芯片与晶体管（常用电子元件以及封装请查看工程文档）：</p>
+<ul>
+<li>IRF540N</li>
+<li>IR2110S</li>
+<li>电感</li>
+<li>INA282</li>
+</ul>
+<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
+<h2 id="升压与降压主电路">升压与降压主电路</h2>
+<p>电路下图所示：</p>
+<figure data-type="image" tabindex="2"><img src="/images/img1.jpg" alt="img1" loading="lazy"></figure>
+<p>R3与R12为康铜丝（采样电阻），采取电流大小，INA282对采样电阻两端的电压放大倍数为50倍，请酌情选择阻值。典型值为20毫欧。</p>
+<p>输入与输出并联与地的电容请根据实际的滤波情况进行选择，不宜太大，因为太大的电容势必会造成更多的电荷损失，增加系统损耗。</p>
+<p>R1、R2、R6、R7为电阻分压采样，其电压公式为：</p>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mi>t</mi></msub><mo>=</mo><mfrac><msub><mi>R</mi><mn>2</mn></msub><mrow><msub><mi>R</mi><mn>1</mn></msub><mo>+</mo><msub><mi>R</mi><mn>2</mn></msub></mrow></mfrac><mi>U</mi></mrow><annotation encoding="application/x-tex">U_t = \frac {R_2}{R_1+R_2}U 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span></span></p>
+<p>其他同理。</p>
+<p>电感的感值与承受的功率一般限制模块的最大工作功率，可以通过最大占空比、最大功率和频率计算。建议选取比计算值稍大的电感。</p>
+<p>{% note info %}<br>
+<strong>注意：</strong><br>
+电感的选用与模块工作的状态有关，需要了解的是，电感的感值与频率成反比。不建议选用太大的电感，因为会产生更多的漏磁现象，降低工作效率。<br>
+{% endnote %}</p>
+<p>模块输入电压与输出电压的耐压值受制于电解电容的耐压值。但是尽量不要超过240V。</p>
+<h2 id="驱动控制电路">驱动控制电路</h2>
+<p>电路图如下：</p>
+<figure data-type="image" tabindex="3"><img src="/images/img2.jpg" alt="img2" loading="lazy"></figure>
+<p>此电路中，C3自举电容的作用将成为理解电路的关键。自举电容就是在低端管开通时充电积攒电压；在高端管将要开通时，将积攒的电压叠加在源极上传输给基极，实现高端管的开通。此电容的容值不必很大，使用钽电容也可达到同样的效果。</p>
+<p>驱动电阻R4、R5建议选用10欧姆以内的电阻，以降低回路中的振铃幅度。作者使用的典型值为2.2欧姆。</p>
+<p>{% note info %}<br>
+<strong>注意：</strong><br>
+由于使用同步整流电路，两路控制信号请务必加入死区，切勿另两路同时开通，导致电路烧坏。<br>
+{% endnote %}</p>
+<h1 id="软件支持">软件支持</h1>
+<p>您可以使用各类MCU、FPGA，生成驱动能力较强的PWM、SPWM波形，为模块提供控制信号。建议添加光耦隔离对主控进行保护。</p>
+<p>作者使用STM32F407最小系统板，利用内置时钟直接生成PWM波供给模块，亦可应付大部分应用场景。</p>
+<h1 id="版本更新">版本更新</h1>
+<ul>
+<li>v2.1 黑色版本。</li>
+<li>v2.0 第二次打样。</li>
+<li>v1.0 第一次打样。</li>
+</ul>
+<h1 id="license">License</h1>
+<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://canaanlv.github.io/post/全桥可控逆变器设计/">
+              <h3 class="post-title">
+                下一篇：【电设备赛】全桥可控逆变整流器Inverter&amp;Rectifier模块（开源附AD工程）
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+
+        
+          <div id="disqus_thread"></div>
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">Stay Hungry, Stay Foolish.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Since 2017 | <a class="rss" href="https://canaanlv.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'GrideaSites',
+      apikey: 't52B3WQNyehWeijDFY6fiCDWPuFyqvvzJXoX509hL6rWNnj3gQd0cHCsXReqsbfr',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>

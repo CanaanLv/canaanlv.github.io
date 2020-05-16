@@ -1,801 +1,122 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://canaanlv.github.io</id>
-    <title>Canaan&apos;s Notes</title>
-    <updated>2020-05-16T06:25:31.284Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://canaanlv.github.io"/>
-    <link rel="self" href="https://canaanlv.github.io/atom.xml"/>
-    <subtitle>Stay Hungry, Stay Foolish.</subtitle>
-    <logo>https://canaanlv.github.io/images/avatar.png</logo>
-    <icon>https://canaanlv.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, Canaan&apos;s Notes</rights>
-    <entry>
-        <title type="html"><![CDATA[【电设备赛】低发热整流桥（开源附AD工程）]]></title>
-        <id>https://canaanlv.github.io/post/Rectifier-bridge/</id>
-        <link href="https://canaanlv.github.io/post/Rectifier-bridge/">
-        </link>
-        <updated>2019-09-07T14:19:56.000Z</updated>
-        <summary type="html"><![CDATA[<p>低发热整流桥</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>低发热整流桥</p>
-<!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v1.0-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--RB--01-orange" alt="model:CL-RB-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
-<div align=center >{% btn https://github.com/CanaanLv/Rectifier-bridge, 前往Github下载, download fa-lg fa-fw %}
-<br></div>
-<figure data-type="image" tabindex="1"><img src="/images/demoB.jpg" alt="demoB" loading="lazy"></figure>
-<h1 id="模块描述">模块描述</h1>
-<p>低发热整流桥使用四只MOSFIT与一只控制器实现。相比于二极管整流，发热量极少。</p>
-<h1 id="功能特性">功能特性</h1>
-<p>模块具备以下功能特性：</p>
-<ul>
-<li>整流桥具有EMC滤波</li>
-<li>无需干预的模拟二极管整流桥</li>
-<li>模块内芯片无须另外供电。</li>
-</ul>
-<h1 id="数据参数">数据参数</h1>
-<p>具体参数可参考下表：</p>
-<p>{% note warning %}<br>
-<strong>⚠️警告⚠️</strong></p>
-<ul>
-<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下正常工作。请保护好自己的安全！</li>
-<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
-{% endnote %}</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">项目</th>
-<th style="text-align:center">峰值</th>
-<th style="text-align:center">建议典型值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">输入电压</td>
-<td style="text-align:center">0V～220V</td>
-<td style="text-align:center">10V～60V</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电压</td>
-<td style="text-align:center">0V～Vcc</td>
-<td style="text-align:center">36V</td>
-</tr>
-</tbody>
-</table>
-<h1 id="元件需求">元件需求</h1>
-<p>本模块需要以下（常用电子元件以及封装请查看工程文档）：</p>
-<ul>
-<li>LT4320</li>
-<li>CSD18535</li>
-</ul>
-<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
-<h2 id="整流桥电路">整流桥电路</h2>
-<p>电路下图所示：</p>
-<figure data-type="image" tabindex="2"><img src="/images/rb-img2.jpg" alt="rb-img2" loading="lazy"></figure>
-<p>其中C5为高频电容，对芯片管脚输入起滤波稳压作用。</p>
-<h2 id="emc电路">EMC电路</h2>
-<p>电路图如下：</p>
-<figure data-type="image" tabindex="3"><img src="/images/rb-img1.jpg" alt="rb-img1" loading="lazy"></figure>
-<p>EMC在低功率环境下要求不高，请按需选择元件数值。</p>
-<h1 id="版本更新">版本更新</h1>
-<ul>
-<li>v1.0 正常使用。正式开源</li>
-</ul>
-<h1 id="license">License</h1>
-<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【电设备赛】多路可调升降压辅助电源（开源附AD工程）]]></title>
-        <id>https://canaanlv.github.io/post/Sepic-Power/</id>
-        <link href="https://canaanlv.github.io/post/Sepic-Power/">
-        </link>
-        <updated>2019-09-07T14:19:46.000Z</updated>
-        <summary type="html"><![CDATA[<p>实用升降压多路可调辅助电源</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>实用升降压多路可调辅助电源</p>
-<!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v1.0-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--SP--01-orange" alt="model:CL-SP-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
-<div align=center >{% btn https://github.com/CanaanLv/Sepic-Power, 前往Github下载, download fa-lg fa-fw %}
-<br></div>
-<figure data-type="image" tabindex="1"><img src="/images/demoSP.jpg" alt="demoSP" loading="lazy"></figure>
-<h1 id="模块描述">模块描述</h1>
-<p>XL6009多路可调升降压辅助电源经过精心布线，有三路可调可供选择。还配置二极管整流桥，方便交流供电使用。</p>
-<h1 id="功能特性">功能特性</h1>
-<p>模块具备以下功能特性：</p>
-<ul>
-<li>电源具备三路不同的可调输出，同步多个输出口。</li>
-<li>每一路都有跳线帽作为使能开关。</li>
-<li>配备二极管整流桥，方便交流供电。</li>
-<li>电路空间较小，元件排布密集。</li>
-</ul>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-使用时请注意最大耐压值。<br>
-{% endnote %}</p>
-<h1 id="数据参数">数据参数</h1>
-<p>具体参数可参考下表：</p>
-<p>{% note warning %}<br>
-<strong>⚠️警告⚠️</strong></p>
-<ul>
-<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下正常工作。请保护好自己的安全！</li>
-<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
-{% endnote %}</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">项目</th>
-<th style="text-align:center">峰值</th>
-<th style="text-align:center">建议典型值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">输入电压</td>
-<td style="text-align:center">0V～50V</td>
-<td style="text-align:center">10V～40V</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电压</td>
-<td style="text-align:center">0V～Vcc</td>
-<td style="text-align:center">3.3V、5V、12V、15V</td>
-</tr>
-</tbody>
-</table>
-<h1 id="元件需求">元件需求</h1>
-<p>本模块需要以下（常用电子元件以及封装请查看工程文档）：</p>
-<ul>
-<li>XL6009</li>
-</ul>
-<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
-<p>电路下图所示：</p>
-<figure data-type="image" tabindex="2"><img src="/images/sp-img1.jpg" alt="sp-img1" loading="lazy"></figure>
-<p>电路要求并不是很高，可通过调整电位器对输出电压进行调整。</p>
-<p>作者使用STM32F407最小系统板（已开源），有关作者使用的STM32开源工程，您可以查看这个链接：<a href="https://notes.canlv.top/2019/09/07/STM32F407/">点击前往</a></p>
-<h1 id="版本更新">版本更新</h1>
-<ul>
-<li>v1.0 正常使用。正式开源</li>
-</ul>
-<h1 id="license">License</h1>
-<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【电设备赛】二极管功率因数校正模块（开源附AD工程）]]></title>
-        <id>https://canaanlv.github.io/post/PFC-with-DIODE/</id>
-        <link href="https://canaanlv.github.io/post/PFC-with-DIODE/">
-        </link>
-        <updated>2019-09-07T14:19:37.000Z</updated>
-        <summary type="html"><![CDATA[<p>硬件控制的二极管功率因数校正模块</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>硬件控制的二极管功率因数校正模块</p>
-<!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v1.1-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--PFC--01-orange" alt="model:CL-PFC-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
-<div align=center >{% btn https://github.com/CanaanLv/PFC-with-DIODE, 前往Github下载, download fa-lg fa-fw %}
-<br></div>
-<figure data-type="image" tabindex="1"><img src="/images/demoPFC.jpg" alt="demoPF" loading="lazy"></figure>
-<h1 id="模块描述">模块描述</h1>
-<p>硬件控制的二极管功率因数校正模块使用ICE1PCS01功率因数校正芯片控制的Boost升压电路。电感电流为CCM连续模式。模块最高能达到0.98的校正数值。</p>
-<p>此模块应串接在整流桥之后，为整流后的交流点进行PFC校正。</p>
-<h1 id="功能特性">功能特性</h1>
-<p>模块具备以下功能特性：</p>
-<ul>
-<li>模块无需程序控制，自动进行校正。</li>
-<li>具有过载保护功能。</li>
-<li>可通过电位器调整模块的功率。</li>
-<li>使用电阻更小的香蕉头接线柱。</li>
-<li>电路简单易懂。</li>
-</ul>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-此模块需要另外的12V的芯片供电电压<br>
-{% endnote %}</p>
-<h1 id="数据参数">数据参数</h1>
-<p>具体参数可参考下表：</p>
-<p>{% note warning %}<br>
-<strong>⚠️警告⚠️</strong></p>
-<ul>
-<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下正常工作。请保护好自己的安全！</li>
-<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
-{% endnote %}</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">项目</th>
-<th style="text-align:center">峰值</th>
-<th style="text-align:center">建议典型值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">输入电压</td>
-<td style="text-align:center">0V～100V</td>
-<td style="text-align:center">10V～30V</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电压</td>
-<td style="text-align:center">0V～100V</td>
-<td style="text-align:center">40V</td>
-</tr>
-<tr>
-<td style="text-align:left">输入电流</td>
-<td style="text-align:center">0A～3A</td>
-<td style="text-align:center">0A～2A</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电流</td>
-<td style="text-align:center">0A～3A</td>
-<td style="text-align:center">0A～2A</td>
-</tr>
-<tr>
-<td style="text-align:left">内置芯片供电电压</td>
-<td style="text-align:center">0V～21V</td>
-<td style="text-align:center">12V</td>
-</tr>
-<tr>
-<td style="text-align:left">控制信号电压</td>
-<td style="text-align:center">0V～5V</td>
-<td style="text-align:center">5V、3.3V</td>
-</tr>
-</tbody>
-</table>
-<h1 id="元件需求">元件需求</h1>
-<p>本模块需要以下芯片与晶体管（常用电子元件以及封装请查看工程文档）：</p>
-<ul>
-<li>IRF540N</li>
-<li>ICE1PCS01</li>
-</ul>
-<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
-<h2 id="升压电路">升压电路</h2>
-<p>电路下图所示：</p>
-<figure data-type="image" tabindex="2"><img src="/images/pfc-img1.jpg" alt="pfc-img1" loading="lazy"></figure>
-<p>这部分电路是一个标准的Boost电路，其中尤其注意的是R3为电流检测电阻，阻值不易太大，稳定在1欧姆以内，推荐使用水泥电阻，此电阻的大小对电流波形的采样影响巨大，应慎重选择。</p>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-图中IN+与IN-为整流桥生成的馒头波形的直流电，请勿接入交流点。<br>
-{% endnote %}</p>
-<p>输入端C1应使用高频陶瓷电容，对谐波过滤，避免使用电解电容，破坏输入电压与电流的波形。</p>
-<p>VSENSE采样点应采取稳定的输出电压值，其电路布局应在电容稳压之后。</p>
-<h2 id="驱动控制电路">驱动控制电路</h2>
-<p>电路图如下：</p>
-<figure data-type="image" tabindex="3"><img src="/images/pfc-img2.jpg" alt="pfc-img2" loading="lazy"></figure>
-<p>R4应特别注意阻值的选用，其作用是限制ISENSE端的流入电流，避免烧坏芯片。</p>
-<p>R1为驱动电阻，根据MOSFIT管的不同选取不同的阻值。</p>
-<p>R2为开关频率调整电阻，查看芯片的datasheet获取其选用方法。</p>
-<h1 id="版本更新">版本更新</h1>
-<ul>
-<li>v1.1 打样。正式开源</li>
-<li>v1.0 测试板正常使用</li>
-</ul>
-<h1 id="license">License</h1>
-<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【电设备赛】通用STM32F407最小系统开发板（开源附AD工程）]]></title>
-        <id>https://canaanlv.github.io/post/STM32F407/</id>
-        <link href="https://canaanlv.github.io/post/STM32F407/">
-        </link>
-        <updated>2019-09-07T14:19:30.000Z</updated>
-        <summary type="html"><![CDATA[<p>高集成度通用STM32F407最小系统开发板</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>高集成度通用STM32F407最小系统开发板</p>
-<!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v3.0-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--STM32-orange" alt="model:CL-STM32" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
-<div align=center >{% btn https://github.com/CanaanLv/STM32F407, 前往Github下载, download fa-lg fa-fw %}
-<br></div>
-<figure data-type="image" tabindex="1"><img src="/images/demoSTM32.jpg" alt="demoST" loading="lazy"></figure>
-<h1 id="开发板描述">开发板描述</h1>
-<p>通用STM32F407最小系统开发板是作者面向电设竞赛自主设计的一款最小系统板，历经了三代进化，从一代的F1到三代的F4。</p>
-<h1 id="功能特性">功能特性</h1>
-<p>模块具备以下功能特性：</p>
-<ul>
-<li>最小系统将可用接口全部引出，方便转接与二次开发。</li>
-<li>最小系统留有一个状态灯、ADC输入以及部分按钮，方便简单开发。</li>
-<li>最小系统板载Jlink接口、串口、USB供电接口与I2C接口。</li>
-<li>最小系统支持3.3v与5v以上供电，自带电压转换。</li>
-<li>板载7Pin-OLED接口，可接入屏幕。</li>
-</ul>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-5V一下只接受3.3V供电。<br>
-{% endnote %}</p>
-<h1 id="元件需求">元件需求</h1>
-<p>本模块需要以下芯片与晶体管（常用电子元件以及封装请查看工程文档）：</p>
-<ul>
-<li>STM32F407VGT6（相同封装的F407亦可）</li>
-<li>AMS1117-3.3</li>
-</ul>
-<h1 id="软件支持">软件支持</h1>
-<p>您可以使用Keil（Win）、VB（Win、Mac）等ARM嵌入式开发软件进行编程开发，通过Jlink或外置USB串口下载工具进行下载与调试。</p>
-<p>在开源PCB文件中，您可以查看引脚的排列和其他信息。</p>
-<h1 id="版本更新">版本更新</h1>
-<ul>
-<li>v3.0 重新布局，完善功能</li>
-<li>v2.0 主控F407</li>
-<li>v1.0 主控F103</li>
-</ul>
-<h1 id="license">License</h1>
-<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【电设备赛】三相逆变模块（开源附AD工程）]]></title>
-        <id>https://canaanlv.github.io/post/Three-phase-Inverter/</id>
-        <link href="https://canaanlv.github.io/post/Three-phase-Inverter/">
-        </link>
-        <updated>2019-09-07T14:19:20.000Z</updated>
-        <summary type="html"><![CDATA[<p>简单实现直流到三相电的转换</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>简单实现直流到三相电的转换</p>
-<!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v1.1-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--TPI--01-orange" alt="model:CL-TPI-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
-<div align=center >{% btn https://github.com/CanaanLv/Three-phase-Inverter, 前往Github下载, download fa-lg fa-fw %}
-<br></div>
-<figure data-type="image" tabindex="1"><img src="/images/demoTPI.jpg" alt="demoTPI" loading="lazy"></figure>
-<h1 id="模块描述">模块描述</h1>
-<p>三相逆变模块是一块仅需少量、廉价且简单的电子元件，即可实现将直流电转化为三相电的功能。并且能够稳定承受100W的功率。模块还具有过载保护功能。</p>
-<h1 id="功能特性">功能特性</h1>
-<p>模块具备以下功能特性：</p>
-<ul>
-<li>模块支持PWM、SPWM等控制信号。可单独控制每一个开关管</li>
-<li>具有过载保护功能。</li>
-<li>上下桥臂内置死区，无需担心短路问题。</li>
-<li>MOSFIT管基极具有电荷释放电路，防止电荷积累击穿MOS管。</li>
-<li>驱动电阻方便更换调整。</li>
-<li>使用电阻更小的香蕉头接线柱。</li>
-<li>可设置外部程序使能，提供手动保护功能。</li>
-<li>留有RCD吸收回路，以备应急使用。</li>
-<li>留有大量测试点，方便调试。</li>
-</ul>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-此模块需要另外的15V的芯片供电电压<br>
-{% endnote %}</p>
-<h1 id="数据参数">数据参数</h1>
-<p>具体参数可参考下表：</p>
-<p>{% note warning %}<br>
-<strong>⚠️警告⚠️</strong></p>
-<ul>
-<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下正常工作。请保护好自己的安全！</li>
-<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
-{% endnote %}</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">项目</th>
-<th style="text-align:center">峰值</th>
-<th style="text-align:center">建议典型值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">输入电压</td>
-<td style="text-align:center">0V～100V</td>
-<td style="text-align:center">10V～60V</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电压（线电压有效值）</td>
-<td style="text-align:center">0V～120V</td>
-<td style="text-align:center">36V</td>
-</tr>
-<tr>
-<td style="text-align:left">输入电流</td>
-<td style="text-align:center">0A～4A</td>
-<td style="text-align:center">0A～2A</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电流（线电流有效值）</td>
-<td style="text-align:center">0A～4A</td>
-<td style="text-align:center">0A～2A</td>
-</tr>
-<tr>
-<td style="text-align:left">内置芯片供电电压</td>
-<td style="text-align:center">0V～21V</td>
-<td style="text-align:center">15V</td>
-</tr>
-<tr>
-<td style="text-align:left">控制信号电压</td>
-<td style="text-align:center">0V～5V</td>
-<td style="text-align:center">5V、3.3V</td>
-</tr>
-</tbody>
-</table>
-<h1 id="元件需求">元件需求</h1>
-<p>本模块需要以下（常用电子元件以及封装请查看工程文档）：</p>
-<ul>
-<li>IRF540N</li>
-<li>IR2136</li>
-</ul>
-<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
-<h2 id="三桥臂电路">三桥臂电路</h2>
-<p>电路下图所示：</p>
-<figure data-type="image" tabindex="2"><img src="/images/tpi-img1.jpg" alt="tpi-img1" loading="lazy"></figure>
-<p>其中R19～R24是较为重要的元件，电阻的作用是在基极状态变换时缓解电压突变、而电流无法突变时，对MOSFIT产生的巨大冲击。其阻值微小的变化就可能对输出波形的尖峰与振铃带来可观的缓解。</p>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-本模块中这些电阻的大小建议使用50欧姆以上。如果您使用20欧姆，操作不当，很有可能导致驱动器损坏。<br>
-{% endnote %}</p>
-<p>另外也可以通过在直流电对地并联大容量电解电容、高频陶瓷电容缓解电压中的不稳定因素。</p>
-<p>ITRIP接口是电流采样接口，R27是采样电阻，阻值选用0.025欧姆。</p>
-<h2 id="驱动控制电路">驱动控制电路</h2>
-<p>电路图如下：</p>
-<figure data-type="image" tabindex="3"><img src="/images/tpi-img2.jpg" alt="tpi-img2" loading="lazy"></figure>
-<p>此电路中，C9～C11自举电容的作用将成为理解电路的关键。自举电容就是在低端管开通时充电积攒电压；在高端管将要开通时，将积攒的电压叠加在源极上传输给基极，实现高端管的开通。此电容的容值不必很大，使用钽电容也可达到同样的效果。</p>
-<p>管脚10为使能端，已通过排针接出。</p>
-<h1 id="软件支持">软件支持</h1>
-<p>您可以使用各类MCU、FPGA，生成驱动能力较强的PWM、SPWM波形，为模块提供控制信号。建议添加光耦隔离对主控进行保护。</p>
-<p>作者使用STM32F407最小系统板（已开源），利用内置时钟直接生成PWM与SPWM波供给模块，亦可应付大部分应用场景。</p>
-<p>有关作者使用的STM32开源工程，您可以查看这个链接：<a href="https://notes.canlv.top/2019/09/07/STM32F407/">点击前往</a></p>
-<h1 id="版本更新">版本更新</h1>
-<ul>
-<li>v1.1 正常使用。正式开源</li>
-<li>v1.0 部分布线问题</li>
-</ul>
-<h1 id="license">License</h1>
-<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【电设备赛】真有效值RMS转换电路（开源附AD工程）]]></title>
-        <id>https://canaanlv.github.io/post/rms/</id>
-        <link href="https://canaanlv.github.io/post/rms/">
-        </link>
-        <updated>2019-09-07T14:19:12.000Z</updated>
-        <summary type="html"><![CDATA[<p>具有隔离功能的真有效值RMS转换模块</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>具有隔离功能的真有效值RMS转换模块</p>
-<!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v1.3-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--RMS--01-orange" alt="model:CL-RMS-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
-<div align=center >{% btn https://github.com/CanaanLv/RMS, 前往Github下载, download fa-lg fa-fw %}
-<br></div>
-<figure data-type="image" tabindex="1"><img src="/images/demoRMS.jpg" alt="demoRMS" loading="lazy"></figure>
-<h1 id="模块描述">模块描述</h1>
-<p>真有效值RMS转换模块使用互感器、RMS计算器、运放组成，模块具有输入隔离效果，其高精度可应用于大功率与小信号等多种场合。</p>
-<h1 id="功能特性">功能特性</h1>
-<p>模块具备以下功能特性：</p>
-<ul>
-<li>差分输入的真有效值RMS转换芯片。</li>
-<li>输入具有隔离功能。</li>
-<li>模块各个器件的缩小与放大比例均可调。</li>
-<li>输出配有放大器，提高采样宽度。</li>
-</ul>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-此模块需要另外的5V与12V的芯片供电电压<br>
-{% endnote %}</p>
-<h1 id="数据参数">数据参数</h1>
-<p>具体参数可参考下表：</p>
-<p>{% note warning %}<br>
-<strong>⚠️警告⚠️</strong></p>
-<ul>
-<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下正常工作。请保护好自己的安全！</li>
-<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
-{% endnote %}</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">项目</th>
-<th style="text-align:center">峰值</th>
-<th style="text-align:center">建议典型值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">采样电压</td>
-<td style="text-align:center">0V～500V</td>
-<td style="text-align:center">10V～60V</td>
-</tr>
-<tr>
-<td style="text-align:left">采样电流</td>
-<td style="text-align:center">0V～10A</td>
-<td style="text-align:center">0A～2A</td>
-</tr>
-<tr>
-<td style="text-align:left">输出采样电压</td>
-<td style="text-align:center">0A～Vcc</td>
-<td style="text-align:center">0A～3.3V</td>
-</tr>
-</tbody>
-</table>
-<h1 id="元件需求">元件需求</h1>
-<p>本模块需要以下（常用电子元件以及封装请查看工程文档）：</p>
-<ul>
-<li>LTC1966</li>
-<li>运放</li>
-<li>互感器</li>
-</ul>
-<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
-<h2 id="电流rms转换电路">电流RMS转换电路</h2>
-<p>电流RMS转换电路下图所示：</p>
-<figure data-type="image" tabindex="2"><img src="/images/rms-img1.jpg" alt="rms-img1" loading="lazy"></figure>
-<p>其中R7为电流互感器比例调整电阻，由于LTC1966的差分输入端的峰峰值承受电压为1V，所以在正式通电之前务必在低压环境调整好比例。</p>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-LTC1966的差分输入端对电压极为敏感，在正式通电之前一定要对互感器输出有所把握。<br>
-{% endnote %}</p>
-<p>可调运算放大器之后串接跟随器。</p>
-<p>输出串接LC滤波电路，根据需要选择不同的滤波器。</p>
-<h2 id="电压rms转换电路">电压RMS转换电路</h2>
-<p>电路图如下：</p>
-<figure data-type="image" tabindex="3"><img src="/images/rms-img2.jpg" alt="rms-img2" loading="lazy"></figure>
-<p>其中R1、R13为电压互感器比例调整电阻，由于LTC1966的差分输入端的峰峰值承受电压为1V，所以在正式通电之前务必在低压环境调整好比例。</p>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-LTC1966的差分输入端对电压极为敏感，在正式通电之前一定要对互感器输出有所把握。<br>
-{% endnote %}</p>
-<p>可调运算放大器之后串接跟随器。</p>
-<p>输出串接LC滤波电路，根据需要选择不同的滤波器。</p>
-<h1 id="版本更新">版本更新</h1>
-<ul>
-<li>v1.3 第一次打样，正式开源。</li>
-<li>v1.2 正常使用。</li>
-<li>v1.0 部分布线问题，导致LTC1966烧毁</li>
-</ul>
-<h1 id="license">License</h1>
-<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【电设备赛】双向DC-DC可控电压变换器模块（开源附AD工程）]]></title>
-        <id>https://canaanlv.github.io/post/buck-boost-module/</id>
-        <link href="https://canaanlv.github.io/post/buck-boost-module/">
-        </link>
-        <updated>2019-09-07T09:55:08.000Z</updated>
-        <summary type="html"><![CDATA[<p>双向DC-DC升压与降压变换器模块</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>双向DC-DC升压与降压变换器模块</p>
-<!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v2.1-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--BB--01-orange" alt="model:CL-BB-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
-<div align=center >{% btn https://github.com/CanaanLv/Buck-Boost, 前往Github下载, download fa-lg fa-fw %}
-<br></div>
-<figure data-type="image" tabindex="1"><img src="/images/demoBB.jpg" alt="demoBB" loading="lazy"></figure>
-<h1 id="模块描述">模块描述</h1>
-<p>双向DC-DC升压与降压变换器在满足基础升压与降压功能的基础上，拓展了多种附属电路与功能。还能够维持较高的工作效率。</p>
-<h1 id="功能特性">功能特性</h1>
-<p>模块具备以下功能特性：</p>
-<ul>
-<li>模块支持PWM、SPWM等控制信号</li>
-<li>使用同步整流大幅提升效率，两只开关管可单独控制</li>
-<li>MOSFIT管基极具有电荷释放电路，防止电荷积累击穿MOS管。</li>
-<li>在输入与输出端口留有电压与电流采样电路。</li>
-<li>输入与输出预留万用表探测接口，方便测试。</li>
-<li>驱动电阻方便更换调整。</li>
-<li>关键供电点设置有低通滤波器电路位置，不用时短接即可。</li>
-<li>使用电阻更小的香蕉头接线柱。</li>
-</ul>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-此模块需要另外的12V与5V为内置芯片供电。<br>
-{% endnote %}</p>
-<h1 id="数据参数">数据参数</h1>
-<p>具体参数可参考下表：</p>
-<p>{% note warning %}<br>
-<strong>⚠️警告⚠️</strong></p>
-<ul>
-<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下长时间正常工作。请保护好自己的安全！</li>
-<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
-{% endnote %}</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">项目</th>
-<th style="text-align:center">峰值</th>
-<th style="text-align:center">建议典型值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">输入电压</td>
-<td style="text-align:center">0V～100V</td>
-<td style="text-align:center">10V～60V</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电压</td>
-<td style="text-align:center">0V～100V</td>
-<td style="text-align:center">10V～60V</td>
-</tr>
-<tr>
-<td style="text-align:left">输入电流</td>
-<td style="text-align:center">0A～4A</td>
-<td style="text-align:center">0A～2A</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电流</td>
-<td style="text-align:center">0A～4A</td>
-<td style="text-align:center">0A～2A</td>
-</tr>
-<tr>
-<td style="text-align:left">内置芯片供电电压</td>
-<td style="text-align:center">0V～12V</td>
-<td style="text-align:center">5V、12V</td>
-</tr>
-<tr>
-<td style="text-align:left">控制信号电压</td>
-<td style="text-align:center">0V～5V</td>
-<td style="text-align:center">5V、3.3V</td>
-</tr>
-</tbody>
-</table>
-<h1 id="元件需求">元件需求</h1>
-<p>本模块需要以下芯片与晶体管（常用电子元件以及封装请查看工程文档）：</p>
-<ul>
-<li>IRF540N</li>
-<li>IR2110S</li>
-<li>电感</li>
-<li>INA282</li>
-</ul>
-<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
-<h2 id="升压与降压主电路">升压与降压主电路</h2>
-<p>电路下图所示：</p>
-<figure data-type="image" tabindex="2"><img src="/images/img1.jpg" alt="img1" loading="lazy"></figure>
-<p>R3与R12为康铜丝（采样电阻），采取电流大小，INA282对采样电阻两端的电压放大倍数为50倍，请酌情选择阻值。典型值为20毫欧。</p>
-<p>输入与输出并联与地的电容请根据实际的滤波情况进行选择，不宜太大，因为太大的电容势必会造成更多的电荷损失，增加系统损耗。</p>
-<p>R1、R2、R6、R7为电阻分压采样，其电压公式为：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mi>t</mi></msub><mo>=</mo><mfrac><msub><mi>R</mi><mn>2</mn></msub><mrow><msub><mi>R</mi><mn>1</mn></msub><mo>+</mo><msub><mi>R</mi><mn>2</mn></msub></mrow></mfrac><mi>U</mi></mrow><annotation encoding="application/x-tex">U_t = \frac {R_2}{R_1+R_2}U 
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2805559999999999em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span></span></span></span></span></p>
-<p>其他同理。</p>
-<p>电感的感值与承受的功率一般限制模块的最大工作功率，可以通过最大占空比、最大功率和频率计算。建议选取比计算值稍大的电感。</p>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-电感的选用与模块工作的状态有关，需要了解的是，电感的感值与频率成反比。不建议选用太大的电感，因为会产生更多的漏磁现象，降低工作效率。<br>
-{% endnote %}</p>
-<p>模块输入电压与输出电压的耐压值受制于电解电容的耐压值。但是尽量不要超过240V。</p>
-<h2 id="驱动控制电路">驱动控制电路</h2>
-<p>电路图如下：</p>
-<figure data-type="image" tabindex="3"><img src="/images/img2.jpg" alt="img2" loading="lazy"></figure>
-<p>此电路中，C3自举电容的作用将成为理解电路的关键。自举电容就是在低端管开通时充电积攒电压；在高端管将要开通时，将积攒的电压叠加在源极上传输给基极，实现高端管的开通。此电容的容值不必很大，使用钽电容也可达到同样的效果。</p>
-<p>驱动电阻R4、R5建议选用10欧姆以内的电阻，以降低回路中的振铃幅度。作者使用的典型值为2.2欧姆。</p>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-由于使用同步整流电路，两路控制信号请务必加入死区，切勿另两路同时开通，导致电路烧坏。<br>
-{% endnote %}</p>
-<h1 id="软件支持">软件支持</h1>
-<p>您可以使用各类MCU、FPGA，生成驱动能力较强的PWM、SPWM波形，为模块提供控制信号。建议添加光耦隔离对主控进行保护。</p>
-<p>作者使用STM32F407最小系统板，利用内置时钟直接生成PWM波供给模块，亦可应付大部分应用场景。</p>
-<h1 id="版本更新">版本更新</h1>
-<ul>
-<li>v2.1 黑色版本。</li>
-<li>v2.0 第二次打样。</li>
-<li>v1.0 第一次打样。</li>
-</ul>
-<h1 id="license">License</h1>
-<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【电设备赛】全桥可控逆变整流器Inverter&Rectifier模块（开源附AD工程）]]></title>
-        <id>https://canaanlv.github.io/post/全桥可控逆变器设计/</id>
-        <link href="https://canaanlv.github.io/post/全桥可控逆变器设计/">
-        </link>
-        <updated>2019-09-06T16:46:23.000Z</updated>
-        <summary type="html"><![CDATA[<p>简单的直流电与交流电相互转换模块</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>简单的直流电与交流电相互转换模块</p>
-<!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v1.0-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--IR--01-orange" alt="model:CL-IR-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
-<div align=center >{% btn https://github.com/CanaanLv/Inverter-Rectifier, 前往Github下载, download fa-lg fa-fw %}
-<br></div>
-<figure data-type="image" tabindex="1"><img src="/images/demoir.jpg" alt="demoi" loading="lazy"></figure>
-<h1 id="模块描述">模块描述</h1>
-<p>全桥可控逆变整流器模块是一块可移植性、可编程性以及通用性都较高的电源模块。只需两根信号线即可控制全桥电路，实现直流电压与交流电压的相互转换。模块中的开关器件均可控，可以适应不同的运行状态。系统效率最高峰值可达到94%。</p>
-<h1 id="功能特性">功能特性</h1>
-<p>模块具备以下功能特性：</p>
-<ul>
-<li>模块支持PWM、SPWM等控制信号，每只桥臂仅需一根信号线控制。</li>
-<li>上下桥臂内置死区，无需担心短路问题。</li>
-<li>MOSFIT管基极具有电荷释放电路，防止电荷积累击穿MOS管。</li>
-<li>驱动电阻方便更换调整。</li>
-<li>使用电阻更小的香蕉头接线柱。</li>
-</ul>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-此模块需要另外的12V或者5V为内置芯片供电。<br>
-{% endnote %}</p>
-<h1 id="数据参数">数据参数</h1>
-<p>具体参数可参考下表：</p>
-<p>{% note warning %}<br>
-<strong>⚠️警告⚠️</strong></p>
-<ul>
-<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下正常工作。请保护好自己的安全！</li>
-<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
-{% endnote %}</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">项目</th>
-<th style="text-align:center">峰值</th>
-<th style="text-align:center">建议典型值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">输入电压</td>
-<td style="text-align:center">0V～100V</td>
-<td style="text-align:center">10V～60V</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电压（有效值）</td>
-<td style="text-align:center">0V～120V</td>
-<td style="text-align:center">36V</td>
-</tr>
-<tr>
-<td style="text-align:left">输入电流</td>
-<td style="text-align:center">0A～4A</td>
-<td style="text-align:center">0A～2A</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电流</td>
-<td style="text-align:center">0A～4A</td>
-<td style="text-align:center">0A～2A</td>
-</tr>
-<tr>
-<td style="text-align:left">内置芯片供电电压</td>
-<td style="text-align:center">0V～12V</td>
-<td style="text-align:center">5V、12V</td>
-</tr>
-<tr>
-<td style="text-align:left">控制信号电压</td>
-<td style="text-align:center">0V～5V</td>
-<td style="text-align:center">5V、3.3V</td>
-</tr>
-</tbody>
-</table>
-<h1 id="元件需求">元件需求</h1>
-<p>本模块需要以下芯片与晶体管（常用电子元件以及封装请查看工程文档）：</p>
-<ul>
-<li>IRF540N</li>
-<li>IR2104S</li>
-</ul>
-<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
-<h2 id="逆变与整流电路">逆变与整流电路</h2>
-<p>电路下图所示：</p>
-<figure data-type="image" tabindex="2"><img src="/images/%E5%85%A8%E6%A1%A5%E9%80%86%E5%8F%981.jpg" alt="全桥逆变1" loading="lazy"></figure>
-<p>其中R2、R4、R6、R8是较为重要的元件，电阻的作用是在基极状态变换时缓解电压突变、而电流无法突变时，对MOSFIT产生的巨大冲击。其阻值微小的变化就可能对输出波形的尖峰与振铃带来可观的缓解。</p>
-<p>另外也可以通过在直流电对地并联大容量电解电容、高频陶瓷电容缓解电压中的不稳定因素。</p>
-<h2 id="驱动控制电路">驱动控制电路</h2>
-<p>电路图如下：</p>
-<figure data-type="image" tabindex="3"><img src="/images/%E5%85%A8%E6%A1%A5%E9%80%86%E5%8F%982%E9%A9%B1%E5%8A%A8.jpg" alt="全桥逆变2驱动" loading="lazy"></figure>
-<p>此电路中，C3自举电容的作用将成为理解电路的关键。自举电容就是在低端管开通时充电积攒电压；在高端管将要开通时，将积攒的电压叠加在源极上传输给基极，实现高端管的开通。此电容的容值不必很大，使用钽电容也可达到同样的效果。</p>
-<p>IR2104可以使用同一电压进行供电。管脚3为使能端。</p>
-<h1 id="软件支持">软件支持</h1>
-<p>您可以使用各类MCU、FPGA，生成驱动能力较强的PWM、SPWM波形，为模块提供控制信号。建议添加光耦隔离对主控进行保护。</p>
-<p>作者使用STM32F407最小系统板，利用内置时钟直接生成PWM与SPWM波供给模块，亦可应付大部分应用场景。</p>
-<p>有关作者使用的STM32开源工程，您可以查看这个链接：<a href="https://notes.canlv.top/2019/09/07/STM32F407/">点击前往</a></p>
-<h1 id="版本更新">版本更新</h1>
-<ul>
-<li>v1.0 正常使用。正式开源</li>
-<li>v1.0-early1 第二次打样，测试无问题。</li>
-<li>v1.0-early 第一次打样，发现问题，重新布局。</li>
-</ul>
-<h1 id="license">License</h1>
-<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2019年全国大学生电子设计竞赛-纸张计数显示装置(F题)-湖南赛区二等奖]]></title>
-        <id>https://canaanlv.github.io/post/2019年全国大学生电子设计竞赛-纸张计数显示装置-F题/</id>
-        <link href="https://canaanlv.github.io/post/2019年全国大学生电子设计竞赛-纸张计数显示装置-F题/">
-        </link>
-        <updated>2019-09-04T18:34:16.000Z</updated>
-        <summary type="html"><![CDATA[<p>今年的电子设计竞赛对我来说可谓是一波三折，准备了半年的电源题目，最终没有想到这道题被砍掉了。但是所幸的是在经过理性的题目选择与方案设计之后，比较顺利得完成了这一道题目。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>今年的电子设计竞赛对我来说可谓是一波三折，准备了半年的电源题目，最终没有想到这道题被砍掉了。但是所幸的是在经过理性的题目选择与方案设计之后，比较顺利得完成了这一道题目。</p>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>2019年全国大学生电子设计竞赛-纸张计数显示装置(F题)-湖南赛区二等奖 | Canaan&#39;s Notes</title>
+<meta name="description" content="Stay Hungry, Stay Foolish.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://canaanlv.github.io/favicon.ico?v=1589610278882">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://canaanlv.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://canaanlv.github.io">
+        <img class="avatar" src="https://canaanlv.github.io/images/avatar.png?v=1589610278882" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://canaanlv.github.io">
+        <h1 class="site-title">Canaan&#39;s Notes</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">2019年全国大学生电子设计竞赛-纸张计数显示装置(F题)-湖南赛区二等奖</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-09-05</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://canaanlv.github.io/tag/Ru5sBeSiNbC/">
+                    电设
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/1txHehg19-d/">
+                    电容检测
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/D9WGOelfKiv/">
+                    纸张测厚
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>今年的电子设计竞赛对我来说可谓是一波三折，准备了半年的电源题目，最终没有想到这道题被砍掉了。但是所幸的是在经过理性的题目选择与方案设计之后，比较顺利得完成了这一道题目。</p>
 <!-- more -->
 <h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
 <h1 id="题目选择与分析">题目选择与分析</h1>
@@ -1090,82 +411,84 @@ cond1(yes)-&gt;op3-&gt;cond1
 <p>{% note info %}<br>
 本文使用DISQUS评论系统，您可能需要科学上网才能留言。<br>
 {% endnote %}</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[从0一步一步制作属于你自己的机械键盘]]></title>
-        <id>https://canaanlv.github.io/post/从0一步一步制作属于你自己的机械键盘/</id>
-        <link href="https://canaanlv.github.io/post/从0一步一步制作属于你自己的机械键盘/">
-        </link>
-        <updated>2019-05-23T10:38:49.000Z</updated>
-        <summary type="html"><![CDATA[<p>曾几何时，机械键盘对于我来说只是网吧中的那种啪啪作响的东西，随着自己搭建了自己的博客之后，码字的需求直线上升，而且代码量也越来越大，所以，就盘算着能够拥有一把属于自己的机械键盘。但是由于自己还只是一个穷学生，便萌生了能不能用一种相当极端的方式DIY一款成本较低而且实用又美观的机械键盘。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>曾几何时，机械键盘对于我来说只是网吧中的那种啪啪作响的东西，随着自己搭建了自己的博客之后，码字的需求直线上升，而且代码量也越来越大，所以，就盘算着能够拥有一把属于自己的机械键盘。但是由于自己还只是一个穷学生，便萌生了能不能用一种相当极端的方式DIY一款成本较低而且实用又美观的机械键盘。</p>
-<!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<p>本文方案需要你具有基础电路焊接技巧，以及对电子元件有一定的常识。</p>
-<p>{% dplayer &quot;url=file://./images/Desk.mp4&quot; &quot;theme=#FADFA3&quot; &quot;token=tokendemo&quot; %}</p>
-<h1 id="前期方案准备">前期方案准备</h1>
-<p>在客制化机械键盘领域，开源的方案已经相对来说相当成熟了，所以有很多方案供我们选择。首先需要确定的是你的布局方案：</p>
-<ul>
-<li>GH60以及其衍生出的相似布局</li>
-<li>80键方案，这个布局不包含小键盘，但是有F功能键</li>
-<li>108键方案，这个方案是最常见的全键盘方案</li>
-</ul>
-<p>当然，上述方案是为你提供一个大致思路，为我们准备物资提供参考。而且通过本文的方式采购，你都可以进行细致的键位调整，所以先不要担心。</p>
-<h1 id="物资采购">物资采购</h1>
-<p>首先确定好你的布局方案之后再来采购物资。</p>
-<p>本文采用的GH60布局，并且留有很大的自制空间，首先列出所需材料：</p>
-<p>1、PCB<br>
-2、机械轴<br>
-3、键帽<br>
-4、定位板（可选）<br>
-5、外壳（可选）<br>
-6、焊接工具和焊接能力</p>
-<p>接下来详细聊聊每个材料的选购。</p>
-<h2 id="pcb">PCB</h2>
-<p>PCB的选购相对来说比较重要，能力强的同学可以考虑自己绘制PCB并进行打样焊接，这样会针对你本人极大的提高针对性，而且自己也可以预留出大量扩展接口，但是难度相对较高，而且一版成功率较低。</p>
-<blockquote>
-<p>我自己开始时是准备自己绘制PCB的，但是由于最近很忙，自己画时间成本相对来说比较高，而且测试起来比较麻烦，斟酌之后还是用了下文的方法。</p>
-</blockquote>
-<p>另一种方案是使用开源的PCB制作，这样子就省去了自己绘制PCB。</p>
-<p>网上有很多为客制化提供的PCB，但是对于我来说，价格都太贵（超过40我都觉得不行），所以经过寻找，发现淘宝有一家提供很低价的开源PCB板，价格40元。这个价格远低于打样价格，我猜测应该也是打样剩余的电路板。所以这个方案可以是合租大样PCB板吧。</p>
-<blockquote>
-<p>注意：在购买PCB的时候一定要注意好键位和布局，尽量选择具有多种布局方法兼容的PCB板，方便后期修改键位。</p>
-</blockquote>
-<h2 id="机械轴">机械轴</h2>
-<p>首先，当然是购买新的散装机械轴，不同的轴不同的价格。当然，这个方案不能达到我们需要的低价。</p>
-<p>所以，另一种可行的方法是在淘宝搜索「剪线机械键盘」，买一个坏了的键盘，自己动手拆轴。</p>
-<p>这个过程是相当有趣的，这也是「垃圾佬」的乐趣所在，甚至运气好的话可以用不到100元买到一块HHKB静电容键盘，然后手动翻新。这里我买到了一块Cherry茶轴108键剪线键盘，拆下了所有的轴和灯来备用。成本30元。</p>
-<h2 id="键帽">键帽</h2>
-<p>键帽是和轴一样直接影响手感的，所以道理上应该买一套好的键帽。</p>
-<p>但是为了低价，而且好用，我从闲鱼上买了一套磨砂质感的键帽，用起来还不错。没有透光，不过我也不需要，成本30元</p>
-<blockquote>
-<p>注意：在购买键帽的时候可以一起购买一组卫星轴或者平衡轴，用来给宽度较长的按键作支撑。有两种，一种是安装在定位板上的，一种是安装在PCB上的。按需购买。</p>
-</blockquote>
-<h2 id="定位板可选">定位板（可选）</h2>
-<p>如果不用定位板的话也不是不行，但是需要你能把每一个轴都焊正，而且如果是绿色的PCB，你会在键帽之间的空袭看到绿色的盖油，影响美观。所以我还是花了30元购买饿了一块GH60的定位板。</p>
-<blockquote>
-<p>注意：购买定位板的时候也以一定要注意键位布局</p>
-</blockquote>
-<h2 id="外壳可选">外壳（可选）</h2>
-<p>外壳就有很多便宜的方案了，各种不同材质的外壳完全看个人喜好，甚至不需要外壳也可以。本人由于可以使用学校的3D打印机，所以就白嫖了一个3D打印外壳。成本0元。</p>
-<h1 id="焊接组装">焊接组装</h1>
-<p>首先你需要做的是，测试好所有PCB上的功能，包括主控、按键、灯和其他扩展模块。这些测试方法在购买的PCB店家会提供。</p>
-<p>保证PCB上的所有功能能够正常使用之后，即可执行下面的组装焊接步骤</p>
-<p>可以按照一下步骤进行安装:</p>
-<p>1、首先在PCB上安装PCB卫星轴（当你使用PCB卫星轴时）<br>
-2、然后安装定位板，并在定位板上安装定位板卫星轴（当你使用定位板卫星轴时）<br>
-3、在定位板上安装键轴、灯，并焊接好。</p>
-<blockquote>
-<p>注意：时刻注意测试你的电路是否正常工作。</p>
-</blockquote>
-<p>4、最后一步，在测试完所有的功能之后，就可以安装键帽了，安装完键帽，键盘就制作完成了。</p>
-<h1 id="总结">总结</h1>
-<p>键盘的安装相对来说比较简单，本文主要提供一种廉价购买质量较好的机械键盘的购买思路，可以说路子比较野了，这其中我自己换了很多不同的商家，也是很幸运能够捡到一块茶轴垃圾键盘。这也是这其中的乐趣所在。</p>
-<p>{% note info %}<br>
-本文使用DISQUS评论系统，可能需要特殊的网络需求。<br>
-{% endnote %}</p>
-]]></content>
-    </entry>
-</feed>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://canaanlv.github.io/post/从0一步一步制作属于你自己的机械键盘/">
+              <h3 class="post-title">
+                下一篇：从0一步一步制作属于你自己的机械键盘
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+
+        
+          <div id="disqus_thread"></div>
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">Stay Hungry, Stay Foolish.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Since 2017 | <a class="rss" href="https://canaanlv.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'GrideaSites',
+      apikey: 't52B3WQNyehWeijDFY6fiCDWPuFyqvvzJXoX509hL6rWNnj3gQd0cHCsXReqsbfr',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>

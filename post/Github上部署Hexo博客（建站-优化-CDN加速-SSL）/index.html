@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Mac环境下在Github上部署Hexo博客（建站+Next主题优化+个人域名+免费CDN加速+SSL） | Canaan&#39;s Notes</title>
+<meta name="description" content="Stay Hungry, Stay Foolish.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://canaanlv.github.io/favicon.ico?v=1589610278882">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://canaanlv.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://canaanlv.github.io">
+        <img class="avatar" src="https://canaanlv.github.io/images/avatar.png?v=1589610278882" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://canaanlv.github.io">
+        <h1 class="site-title">Canaan&#39;s Notes</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">Mac环境下在Github上部署Hexo博客（建站+Next主题优化+个人域名+免费CDN加速+SSL）</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-05-09</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://canaanlv.github.io/tag/Pw9u56D5i/">
+                    Hexo
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>本篇教程是本站的建站历程，本文引用了大量外部连接，包含非常全面的教程，从0开始在GitHub上搭建静态博客教程，并会把在其中需要注意的点都罗列出来，如果下方有任何内容因为原作者更新而产生的问题，希望您可以在文章底部给我留言。</p>
+<!-- more -->
+<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
+<p>非常感谢本文所引用的各位博主发布的文章，以及Hexo与Next作者为我们提供如此美观便捷的博客引擎与主题！所有相关应用可在文章底部查看！</p>
+<p>Let's do this！</p>
+<h2 id="申请github账号并开通个人空间">申请Github账号并开通个人空间</h2>
+<ul>
+<li>申请<a href="https://github.com">Github</a>账号,这里不做过多赘述</li>
+<li>创建仓库：参考<a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93">这个链接</a>搭建仓库后你将会获得一个<code>你的用户名.github.io</code>的仓库，这也是你的网站地址。</li>
+</ul>
+<h2 id="搭建mac本地环境">搭建Mac本地环境</h2>
+<h3 id="安装hexo">安装Hexo</h3>
+<p>参考<a href="https://hexo.io/zh-cn/docs/index.html">这篇Hexo官方中文文档</a>安装好Node.js、Git和Hexo。</p>
+<p>注意：<br>
+所有命令请在Mac终端中运行，如果出现权限不够的情况，可使用<code>sudo su -</code>命令切换到<code>root</code>超级用户（但是不建议使用root用户）。</p>
+<h3 id="开始安装">开始安装</h3>
+<p>在终端执行一下命令，在你的Mac上新建一个网站专用文件夹：</p>
+<pre><code class="language-bash">$ hexo init &lt;更改此处为你的网站文件夹&gt;
+$ cd &lt;更改此处为你的网站文件夹&gt;
+$ npm install
+</code></pre>
+<p>注意：<br>
+在安装过程中可能会出现「卡住」的状态，别担心，很有可能是网络问题，使用<code>Ctrl+C</code>终止当前运行的程序，参考<a href="https://segmentfault.com/a/1190000004444283">这个链接</a>更改npm为国内的软件源。</p>
+<p>然后键入一下命令测试Hexo是否正常：</p>
+<pre><code class="language-bash">hexo s --debug //默认本地地址localhost:4000，可以看到调试信息
+</code></pre>
+<h3 id="同步hexo到github">同步Hexo到Github</h3>
+<p>上面你看到的只是在本地机器上的测试，还需要下面的步骤来将网站内容上传到Github：</p>
+<pre><code class="language-bash">npm install hexo-deployer-git --save
+</code></pre>
+<p>安装完成后打开本地博客目录<code>_config.yml</code>文件，更改文本最下方<code>deploy</code>节点为以下状态；</p>
+<pre><code class="language-bash">deploy:
+  type: git
+  repo: https://github.com/youlookwhat/youlookwhat.github.io.git
+  branch: master
+</code></pre>
+<p>保存配置后，确认本地可以正常工作后，键入一下命令，上传到github：</p>
+<pre><code class="language-bash">hexo clean %% hexo g %% hexo d
+</code></pre>
+<p>这时你就可以在<code>username.github.io</code>看到你的博客了，如果在你添加文章或者做了任何相关的修改后，保证网站正常工作后，使用上面的一行代码上传到Github。</p>
+<h2 id="next主题安装与配置">Next主题安装与配置</h2>
+<h3 id="安装-启用next">安装、启用Next</h3>
+<p>可以参考Next作者编写的<a href="http://theme-next.iissnan.com/getting-started.html">参考文档</a>来安装。</p>
+<p>调试代码后可以使用以下一行命令打开本地测试：</p>
+<pre><code class="language-bash">hexo clean %% hexo g &amp;&amp; hexo s --debug
+</code></pre>
+<p>测试无误后使用以下代码上传到Github：</p>
+<pre><code class="language-bash">hexo clean %% hexo g %% hexo d
+</code></pre>
+<p>注意：<br>
+这两行代码可以当作日常维护时使用，测试代码在运行时会实时编译你的更改，方便查看效果，完成所有更改之后上传代码。</p>
+<p>注意：<br>
+日常新建、编辑自己文章建议使用MWeb来编辑，详细的设置方法可以参考<a href="https://zhuanlan.zhihu.com/p/30513914">这篇文章</a></p>
+<h2 id="博客优化">博客优化</h2>
+<h3 id="主题优化">主题优化</h3>
+<p>详细的主题优化可以根据需要来优化，可以参考以下链接：</p>
+<ul>
+<li><a href="http://theme-next.iissnan.com/theme-settings.html">Next官方文档-主题配置</a></li>
+<li><a href="https://www.jianshu.com/p/f054333ac9e6">hexo的next主题个性化教程:打造炫酷网站</a></li>
+</ul>
+<p>注意：<br>
+由于Next作者更新迅速，网络上很多文章中所提到的直接更改源代码的方式，有很大可能作者已经嵌入在了主题内，你可以尝试在<code>主题配置文件</code>中查看是否有这项功能。（给作者点赞👍）</p>
+<h3 id="个人域名免费cdnssl">个人域名+免费CDN+SSL</h3>
+<p>你可以参考这篇文章<a href="https://leamtrop.com/2018/01/28/github-pages-cloudflare/">Github Pages 免费使用 SSL 以及 CDN 加速</a></p>
+<h2 id="常见问题">常见问题</h2>
+<ul>
+<li>本地调试时如果遇到浏览器缓存没有及时清理的问题，可以使用<code>Alt+Commamd+R</code>快捷键来忽略缓存刷新页面。</li>
+<li>出现问题时及时查看Debug数据，其中会列出出问题的文件地址与行数，对应找到文件问题，查看是否少了空格或者冒号为中文冒号。</li>
+</ul>
+<h2 id="联系我">联系我</h2>
+<p>如果你遇到任何问题，欢迎留言或者通过各种方式联系我。</p>
+<p>引用连接：</p>
+<ul>
+<li><a href="https://cloud.tencent.com/developer/article/1333122">Mac搭建Hexo博客流程记录，排雷完成</a></li>
+<li><a href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html">使用hexo+github搭建免费个人博客详细教程</a></li>
+</ul>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://canaanlv.github.io/post/AD中把修改后的原件封装更新到当前PCB中/">
+              <h3 class="post-title">
+                下一篇：AD中把修改后的原件封装更新到当前PCB中
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+
+        
+          <div id="disqus_thread"></div>
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">Stay Hungry, Stay Foolish.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Since 2017 | <a class="rss" href="https://canaanlv.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'GrideaSites',
+      apikey: 't52B3WQNyehWeijDFY6fiCDWPuFyqvvzJXoX509hL6rWNnj3gQd0cHCsXReqsbfr',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>【电设备赛】低发热整流桥（开源附AD工程） | Canaan&#39;s Notes</title>
+<meta name="description" content="Stay Hungry, Stay Foolish.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://canaanlv.github.io/favicon.ico?v=1589610278882">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://canaanlv.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://canaanlv.github.io">
+        <img class="avatar" src="https://canaanlv.github.io/images/avatar.png?v=1589610278882" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://canaanlv.github.io">
+        <h1 class="site-title">Canaan&#39;s Notes</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">【电设备赛】低发热整流桥（开源附AD工程）</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-09-07</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://canaanlv.github.io/tag/mllH7cYz7/">
+                    电源
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/AF3BqlfPLP/">
+                    整流桥
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/PyUqHuqSY7/">
+                    模块
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/adPEcCWmuY/">
+                    电赛
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>低发热整流桥</p>
+<!-- more -->
+<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
+<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v1.0-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--RB--01-orange" alt="model:CL-RB-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
+<div align=center >{% btn https://github.com/CanaanLv/Rectifier-bridge, 前往Github下载, download fa-lg fa-fw %}
+<br></div>
+<figure data-type="image" tabindex="1"><img src="/images/demoB.jpg" alt="demoB" loading="lazy"></figure>
+<h1 id="模块描述">模块描述</h1>
+<p>低发热整流桥使用四只MOSFIT与一只控制器实现。相比于二极管整流，发热量极少。</p>
+<h1 id="功能特性">功能特性</h1>
+<p>模块具备以下功能特性：</p>
+<ul>
+<li>整流桥具有EMC滤波</li>
+<li>无需干预的模拟二极管整流桥</li>
+<li>模块内芯片无须另外供电。</li>
+</ul>
+<h1 id="数据参数">数据参数</h1>
+<p>具体参数可参考下表：</p>
+<p>{% note warning %}<br>
+<strong>⚠️警告⚠️</strong></p>
+<ul>
+<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下正常工作。请保护好自己的安全！</li>
+<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
+{% endnote %}</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目</th>
+<th style="text-align:center">峰值</th>
+<th style="text-align:center">建议典型值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">输入电压</td>
+<td style="text-align:center">0V～220V</td>
+<td style="text-align:center">10V～60V</td>
+</tr>
+<tr>
+<td style="text-align:left">输出电压</td>
+<td style="text-align:center">0V～Vcc</td>
+<td style="text-align:center">36V</td>
+</tr>
+</tbody>
+</table>
+<h1 id="元件需求">元件需求</h1>
+<p>本模块需要以下（常用电子元件以及封装请查看工程文档）：</p>
+<ul>
+<li>LT4320</li>
+<li>CSD18535</li>
+</ul>
+<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
+<h2 id="整流桥电路">整流桥电路</h2>
+<p>电路下图所示：</p>
+<figure data-type="image" tabindex="2"><img src="/images/rb-img2.jpg" alt="rb-img2" loading="lazy"></figure>
+<p>其中C5为高频电容，对芯片管脚输入起滤波稳压作用。</p>
+<h2 id="emc电路">EMC电路</h2>
+<p>电路图如下：</p>
+<figure data-type="image" tabindex="3"><img src="/images/rb-img1.jpg" alt="rb-img1" loading="lazy"></figure>
+<p>EMC在低功率环境下要求不高，请按需选择元件数值。</p>
+<h1 id="版本更新">版本更新</h1>
+<ul>
+<li>v1.0 正常使用。正式开源</li>
+</ul>
+<h1 id="license">License</h1>
+<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://canaanlv.github.io/post/Sepic-Power/">
+              <h3 class="post-title">
+                下一篇：【电设备赛】多路可调升降压辅助电源（开源附AD工程）
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+
+        
+          <div id="disqus_thread"></div>
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">Stay Hungry, Stay Foolish.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Since 2017 | <a class="rss" href="https://canaanlv.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'GrideaSites',
+      apikey: 't52B3WQNyehWeijDFY6fiCDWPuFyqvvzJXoX509hL6rWNnj3gQd0cHCsXReqsbfr',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>

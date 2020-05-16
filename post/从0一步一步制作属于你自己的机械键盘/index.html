@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>从0一步一步制作属于你自己的机械键盘 | Canaan&#39;s Notes</title>
+<meta name="description" content="Stay Hungry, Stay Foolish.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://canaanlv.github.io/favicon.ico?v=1589610278882">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://canaanlv.github.io/styles/main.css">
+
+
+  
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://canaanlv.github.io">
+        <img class="avatar" src="https://canaanlv.github.io/images/avatar.png?v=1589610278882" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://canaanlv.github.io">
+        <h1 class="site-title">Canaan&#39;s Notes</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">从0一步一步制作属于你自己的机械键盘</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-05-23</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://canaanlv.github.io/tag/kQWU9syafFj/">
+                    键盘
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://canaanlv.github.io/tag/rBQ9GDMeHDr/">
+                    DIY
+                    
+                  </a>
+                
+              </span>
+            
+          </div>
+          <div class="post-content">
+            <p>曾几何时，机械键盘对于我来说只是网吧中的那种啪啪作响的东西，随着自己搭建了自己的博客之后，码字的需求直线上升，而且代码量也越来越大，所以，就盘算着能够拥有一把属于自己的机械键盘。但是由于自己还只是一个穷学生，便萌生了能不能用一种相当极端的方式DIY一款成本较低而且实用又美观的机械键盘。</p>
+<!-- more -->
+<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
+<p>本文方案需要你具有基础电路焊接技巧，以及对电子元件有一定的常识。</p>
+<p>{% dplayer &quot;url=file://./images/Desk.mp4&quot; &quot;theme=#FADFA3&quot; &quot;token=tokendemo&quot; %}</p>
+<h1 id="前期方案准备">前期方案准备</h1>
+<p>在客制化机械键盘领域，开源的方案已经相对来说相当成熟了，所以有很多方案供我们选择。首先需要确定的是你的布局方案：</p>
+<ul>
+<li>GH60以及其衍生出的相似布局</li>
+<li>80键方案，这个布局不包含小键盘，但是有F功能键</li>
+<li>108键方案，这个方案是最常见的全键盘方案</li>
+</ul>
+<p>当然，上述方案是为你提供一个大致思路，为我们准备物资提供参考。而且通过本文的方式采购，你都可以进行细致的键位调整，所以先不要担心。</p>
+<h1 id="物资采购">物资采购</h1>
+<p>首先确定好你的布局方案之后再来采购物资。</p>
+<p>本文采用的GH60布局，并且留有很大的自制空间，首先列出所需材料：</p>
+<p>1、PCB<br>
+2、机械轴<br>
+3、键帽<br>
+4、定位板（可选）<br>
+5、外壳（可选）<br>
+6、焊接工具和焊接能力</p>
+<p>接下来详细聊聊每个材料的选购。</p>
+<h2 id="pcb">PCB</h2>
+<p>PCB的选购相对来说比较重要，能力强的同学可以考虑自己绘制PCB并进行打样焊接，这样会针对你本人极大的提高针对性，而且自己也可以预留出大量扩展接口，但是难度相对较高，而且一版成功率较低。</p>
+<blockquote>
+<p>我自己开始时是准备自己绘制PCB的，但是由于最近很忙，自己画时间成本相对来说比较高，而且测试起来比较麻烦，斟酌之后还是用了下文的方法。</p>
+</blockquote>
+<p>另一种方案是使用开源的PCB制作，这样子就省去了自己绘制PCB。</p>
+<p>网上有很多为客制化提供的PCB，但是对于我来说，价格都太贵（超过40我都觉得不行），所以经过寻找，发现淘宝有一家提供很低价的开源PCB板，价格40元。这个价格远低于打样价格，我猜测应该也是打样剩余的电路板。所以这个方案可以是合租大样PCB板吧。</p>
+<blockquote>
+<p>注意：在购买PCB的时候一定要注意好键位和布局，尽量选择具有多种布局方法兼容的PCB板，方便后期修改键位。</p>
+</blockquote>
+<h2 id="机械轴">机械轴</h2>
+<p>首先，当然是购买新的散装机械轴，不同的轴不同的价格。当然，这个方案不能达到我们需要的低价。</p>
+<p>所以，另一种可行的方法是在淘宝搜索「剪线机械键盘」，买一个坏了的键盘，自己动手拆轴。</p>
+<p>这个过程是相当有趣的，这也是「垃圾佬」的乐趣所在，甚至运气好的话可以用不到100元买到一块HHKB静电容键盘，然后手动翻新。这里我买到了一块Cherry茶轴108键剪线键盘，拆下了所有的轴和灯来备用。成本30元。</p>
+<h2 id="键帽">键帽</h2>
+<p>键帽是和轴一样直接影响手感的，所以道理上应该买一套好的键帽。</p>
+<p>但是为了低价，而且好用，我从闲鱼上买了一套磨砂质感的键帽，用起来还不错。没有透光，不过我也不需要，成本30元</p>
+<blockquote>
+<p>注意：在购买键帽的时候可以一起购买一组卫星轴或者平衡轴，用来给宽度较长的按键作支撑。有两种，一种是安装在定位板上的，一种是安装在PCB上的。按需购买。</p>
+</blockquote>
+<h2 id="定位板可选">定位板（可选）</h2>
+<p>如果不用定位板的话也不是不行，但是需要你能把每一个轴都焊正，而且如果是绿色的PCB，你会在键帽之间的空袭看到绿色的盖油，影响美观。所以我还是花了30元购买饿了一块GH60的定位板。</p>
+<blockquote>
+<p>注意：购买定位板的时候也以一定要注意键位布局</p>
+</blockquote>
+<h2 id="外壳可选">外壳（可选）</h2>
+<p>外壳就有很多便宜的方案了，各种不同材质的外壳完全看个人喜好，甚至不需要外壳也可以。本人由于可以使用学校的3D打印机，所以就白嫖了一个3D打印外壳。成本0元。</p>
+<h1 id="焊接组装">焊接组装</h1>
+<p>首先你需要做的是，测试好所有PCB上的功能，包括主控、按键、灯和其他扩展模块。这些测试方法在购买的PCB店家会提供。</p>
+<p>保证PCB上的所有功能能够正常使用之后，即可执行下面的组装焊接步骤</p>
+<p>可以按照一下步骤进行安装:</p>
+<p>1、首先在PCB上安装PCB卫星轴（当你使用PCB卫星轴时）<br>
+2、然后安装定位板，并在定位板上安装定位板卫星轴（当你使用定位板卫星轴时）<br>
+3、在定位板上安装键轴、灯，并焊接好。</p>
+<blockquote>
+<p>注意：时刻注意测试你的电路是否正常工作。</p>
+</blockquote>
+<p>4、最后一步，在测试完所有的功能之后，就可以安装键帽了，安装完键帽，键盘就制作完成了。</p>
+<h1 id="总结">总结</h1>
+<p>键盘的安装相对来说比较简单，本文主要提供一种廉价购买质量较好的机械键盘的购买思路，可以说路子比较野了，这其中我自己换了很多不同的商家，也是很幸运能够捡到一块茶轴垃圾键盘。这也是这其中的乐趣所在。</p>
+<p>{% note info %}<br>
+本文使用DISQUS评论系统，可能需要特殊的网络需求。<br>
+{% endnote %}</p>
+
+          </div>
+        </div>
+
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://canaanlv.github.io/post/对于交流电路中电感的一点理解/">
+              <h3 class="post-title">
+                下一篇：对于交流电路中电感的一点理解
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+        
+
+        
+          <div id="disqus_thread"></div>
+        
+      
+
+      <div class="site-footer">
+  <div class="slogan">Stay Hungry, Stay Foolish.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Since 2017 | <a class="rss" href="https://canaanlv.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+  
+
+  
+    <script src="https://unpkg.com/disqusjs@1.1/dist/disqus.js"></script>
+    <script>
+
+    var options = {
+      shortname: 'GrideaSites',
+      apikey: 't52B3WQNyehWeijDFY6fiCDWPuFyqvvzJXoX509hL6rWNnj3gQd0cHCsXReqsbfr',
+    }
+    if ('') {
+      options.api = ''
+    }
+    var dsqjs = new DisqusJS(options)
+
+    </script>
+  
+
+
+
+
+  </body>
+</html>

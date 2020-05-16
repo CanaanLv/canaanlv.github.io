@@ -1,0 +1,300 @@
+
+<html>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>Canaan&#39;s Notes</title>
+<meta name="description" content="Stay Hungry, Stay Foolish.">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://canaanlv.github.io/favicon.ico?v=1589610278882">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://canaanlv.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://canaanlv.github.io">
+        <img class="avatar" src="https://canaanlv.github.io/images/avatar.png?v=1589610278882" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://canaanlv.github.io">
+        <h1 class="site-title">Canaan&#39;s Notes</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
+  </div>
+</div>
+
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        
+        
+<section class="post-item">
+    <div class="content">
+      <a href="https://canaanlv.github.io/post/对于交流电路中电感的一点理解/">
+        <h2 class="post-title">对于交流电路中电感的一点理解</h2>
+      </a>
+      <div class="post-abstract">
+        <p>今天和学长交流了一下能量回馈装置的方案，学长为我提出了一个我从来没有思考过的方向：</p>
+<blockquote>
+<p>你有没有仔细考虑过这个能量回馈装置交流部分的电流怎么控制？他是怎么满足欧姆定律的呢？</p>
+</blockquote>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-05-16</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://canaanlv.github.io/tag/mllH7cYz7/">
+                电源
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://canaanlv.github.io/post/Macbook-Pro-13-Early-2015-更换东芝XG3-512G-SSD经历、休眠与耗电报告/">
+        <h2 class="post-title">Macbook Pro 13 Early 2015 更换东芝XG3 512G SSD经历、休眠与耗电报告</h2>
+      </a>
+      <div class="post-abstract">
+        <p>前段时间更换了的Macbook Pro上的SSD，128GB实在是有点告急，在网络上查找了许多种更换方案，网络上大部分都是使用Intel或者三星的更换方案，但是由于资金原因离土豪们的选择还是有一点差距，所以就从闲鱼上淘到了一根400元的东芝XG3 512g的条子，更换后现在已经使用了大约半个月，把更换的过程和遇到的问题和大家分享一下。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-05-10</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://canaanlv.github.io/tag/_mlAQ2LgW4j/">
+                Mac硬件
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://canaanlv.github.io/post/Github上部署Hexo博客（建站-优化-CDN加速-SSL）/">
+        <h2 class="post-title">Mac环境下在Github上部署Hexo博客（建站+Next主题优化+个人域名+免费CDN加速+SSL）</h2>
+      </a>
+      <div class="post-abstract">
+        <p>本篇教程是本站的建站历程，本文引用了大量外部连接，包含非常全面的教程，从0开始在GitHub上搭建静态博客教程，并会把在其中需要注意的点都罗列出来，如果下方有任何内容因为原作者更新而产生的问题，希望您可以在文章底部给我留言。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-05-09</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://canaanlv.github.io/tag/Pw9u56D5i/">
+                Hexo
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://canaanlv.github.io/post/AD中把修改后的原件封装更新到当前PCB中/">
+        <h2 class="post-title">AD中把修改后的原件封装更新到当前PCB中</h2>
+      </a>
+      <div class="post-abstract">
+        <p>在使用Altium Designer画板子时，有时在修改完某一个元件的封装库之后需要直接替换PCB中原来的原件，保留其位置。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-05-09</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://canaanlv.github.io/tag/OD8VKNBuZC_/">
+                AD
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://canaanlv.github.io/post/关于逆变交流电的一些理解/">
+        <h2 class="post-title">关于逆变交流电的一些理解</h2>
+      </a>
+      <div class="post-abstract">
+        <p>曾经我对于交流电的认识是基于直流电出发理解的。直流电的电压不变且为正；交流电的电压在变化，且有正有负。但是，这种固化的思维却给我后续的测试中带来一些困扰。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-05-09</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://canaanlv.github.io/tag/mllH7cYz7/">
+                电源
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+<section class="post-item">
+    <div class="content">
+      <a href="https://canaanlv.github.io/post/一款可行的能量回馈装置/">
+        <h2 class="post-title">一款可行的能量回馈装置</h2>
+      </a>
+      <div class="post-abstract">
+        <p>中南大学2019年电子设计竞赛校赛题目中的电源部分是2018年TI公司为全国各个省赛赛区出的一道样题，具体的题目可<a href="https://www.nuedc-training.com.cn/index/news/details/new_id/57">以点击这里</a>查看。</p>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-05-08</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://canaanlv.github.io/tag/mllH7cYz7/">
+                电源
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+      <a href="https://canaanlv.github.io/post/一款可行的能量回馈装置/">
+        <div class="feature-container" style="background-image: url('https://i.loli.net/2020/05/16/7cZyf96GJh3PpTO.png')">
+        </div>
+      </a>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
+    <a href="https://canaanlv.github.io/" class="prev"><i class="icon-arrow-ios-back-outline"></i> 上一页</a>
+  
+  
+</div>
+
+
+      </div>
+
+      <div class="site-footer">
+  <div class="slogan">Stay Hungry, Stay Foolish.</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Since 2017 | <a class="rss" href="https://canaanlv.github.io/atom.xml" target="_blank">RSS</a>
+</div>
+
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
