@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>【电设备赛】低发热整流桥（开源附AD工程） | Canaan&#39;s Notes</title>
+<title>解决Docker removing network时has active endpoints错误 | Canaan&#39;s Notes</title>
 <link rel="shortcut icon" href="https://notes.canlv.top/favicon.ico?v=1589781412117">
 <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://notes.canlv.top/styles/main.css">
@@ -87,98 +87,46 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    【电设备赛】低发热整流桥（开源附AD工程）
+                    解决Docker removing network时has active endpoints错误
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2019-09-07 ·
+                        · 2020-05-18 ·
                     </time>
                     
-                        <a href="https://notes.canlv.top/tag/mllH7cYz7/" class="post-tags">
-                            # 电源
+                        <a href="https://notes.canlv.top/tag/ItZ6fCwE8/" class="post-tags">
+                            # 运维
                         </a>
                     
-                        <a href="https://notes.canlv.top/tag/AF3BqlfPLP/" class="post-tags">
-                            # 整流桥
-                        </a>
-                    
-                        <a href="https://notes.canlv.top/tag/PyUqHuqSY7/" class="post-tags">
-                            # 模块
-                        </a>
-                    
-                        <a href="https://notes.canlv.top/tag/adPEcCWmuY/" class="post-tags">
-                            # 电赛
+                        <a href="https://notes.canlv.top/tag/5QvchZKItP/" class="post-tags">
+                            # Linux
                         </a>
                     
                 </div>
                 <div class="post-content">
-                    <p>低发热整流桥</p>
+                    <p>Docker在使用关闭命令<code>docker-compose down</code>时出现错误</p>
 <!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<div align=center ><img src="https://img.shields.io/badge/Protel%20DXP-v16.0.1-blue" alt="Protel DXP version" style="display: inline-block" /> <img src="https://img.shields.io/badge/version-v1.0-orange" alt="version" style="display: inline-block" /> <img src="https://img.shields.io/badge/model-CL--RB--01-orange" alt="model:CL-RB-01" style="display: inline-block" /> <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT" style="display: inline-block" /></div>
-<div align=center >{% btn https://github.com/CanaanLv/Rectifier-bridge, 前往Github下载, download fa-lg fa-fw %}
-<br></div>
-<figure data-type="image" tabindex="1"><img src="/images/demoB.jpg" alt="demoB" loading="lazy"></figure>
-<h1 id="模块描述">模块描述</h1>
-<p>低发热整流桥使用四只MOSFIT与一只控制器实现。相比于二极管整流，发热量极少。</p>
-<h1 id="功能特性">功能特性</h1>
-<p>模块具备以下功能特性：</p>
-<ul>
-<li>整流桥具有EMC滤波</li>
-<li>无需干预的模拟二极管整流桥</li>
-<li>模块内芯片无须另外供电。</li>
-</ul>
-<h1 id="数据参数">数据参数</h1>
-<p>具体参数可参考下表：</p>
-<p>{% note warning %}<br>
-<strong>⚠️警告⚠️</strong></p>
-<ul>
-<li>由于作者精力有限，峰值电压为推测值，未经过严格的可靠性测试。所以峰值电压不代表您可以在此条件下正常工作。请保护好自己的安全！</li>
-<li>建议典型值为作者实验与测试使用的数值，当您选择供电参数时，建议您查看元件的datasheet分析耐压值。<br>
-{% endnote %}</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">项目</th>
-<th style="text-align:center">峰值</th>
-<th style="text-align:center">建议典型值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">输入电压</td>
-<td style="text-align:center">0V～220V</td>
-<td style="text-align:center">10V～60V</td>
-</tr>
-<tr>
-<td style="text-align:left">输出电压</td>
-<td style="text-align:center">0V～Vcc</td>
-<td style="text-align:center">36V</td>
-</tr>
-</tbody>
-</table>
-<h1 id="元件需求">元件需求</h1>
-<p>本模块需要以下（常用电子元件以及封装请查看工程文档）：</p>
-<ul>
-<li>LT4320</li>
-<li>CSD18535</li>
-</ul>
-<h1 id="电路分析与注意事项">电路分析与注意事项</h1>
-<h2 id="整流桥电路">整流桥电路</h2>
-<p>电路下图所示：</p>
-<figure data-type="image" tabindex="2"><img src="/images/rb-img2.jpg" alt="rb-img2" loading="lazy"></figure>
-<p>其中C5为高频电容，对芯片管脚输入起滤波稳压作用。</p>
-<h2 id="emc电路">EMC电路</h2>
-<p>电路图如下：</p>
-<figure data-type="image" tabindex="3"><img src="/images/rb-img1.jpg" alt="rb-img1" loading="lazy"></figure>
-<p>EMC在低功率环境下要求不高，请按需选择元件数值。</p>
-<h1 id="版本更新">版本更新</h1>
-<ul>
-<li>v1.0 正常使用。正式开源</li>
-</ul>
-<h1 id="license">License</h1>
-<p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
+<pre><code>Removing network {network}
+ERROR: error while removing network: network {network} id xxxxxx has active endpoints
+</code></pre>
+<p>通过以下命令解决</p>
+<pre><code>docker network disconnect -f {network} {endpoint-name}
+</code></pre>
+<p><code>{endpoint-name}</code>字段通过命令<code>docker network inspect {network}</code>,在结果中查看<code>&quot;Containers&quot;</code>中的<code>&quot;Name&quot;</code>字段。</p>
+<p>之后启动Docker</p>
+<pre><code>docker-compose up -d
+</code></pre>
+<p>如果在启动后出现以下错误：</p>
+<pre><code>Creating network &quot;root_default&quot; with the default driver
+ERROR: Failed to Setup IP tables: Unable to enable SKIP DNAT rule: ... 
+</code></pre>
+<p>尝试通过重启Docker解决</p>
+<pre><code>sudo systemctl restart docker
+</code></pre>
+<p>参考来源：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/Dong-Ge/p/9634351.html">docker 解决network has active endpoints</a></li>
+</ol>
 
                 </div>
             </article>
@@ -187,8 +135,8 @@
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://notes.canlv.top/post/Sepic-Power/" class="post-title gt-a-link">
-                    【电设备赛】多路可调升降压辅助电源（开源附AD工程）
+                <a href="https://notes.canlv.top/post/优化你的Word论文写作流程/" class="post-title gt-a-link">
+                    优化你的Word论文写作流程
                 </a>
             </div>
         

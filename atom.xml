@@ -2,13 +2,46 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://notes.canlv.top</id>
     <title>Canaan&apos;s Notes</title>
-    <updated>2020-05-16T16:44:58.425Z</updated>
+    <updated>2020-05-18T05:58:54.864Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://notes.canlv.top"/>
     <link rel="self" href="https://notes.canlv.top/atom.xml"/>
     <logo>https://notes.canlv.top/images/avatar.png</logo>
     <icon>https://notes.canlv.top/favicon.ico</icon>
     <rights>All rights reserved 2020, Canaan&apos;s Notes</rights>
+    <entry>
+        <title type="html"><![CDATA[解决Docker removing network时has active endpoints错误]]></title>
+        <id>https://notes.canlv.top/post/解决Docker-removing-network时has-active-endpoints错误/</id>
+        <link href="https://notes.canlv.top/post/解决Docker-removing-network时has-active-endpoints错误/">
+        </link>
+        <updated>2020-05-18T04:16:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>Docker在使用关闭命令<code>docker-compose down</code>时出现错误</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>Docker在使用关闭命令<code>docker-compose down</code>时出现错误</p>
+<!-- more -->
+<pre><code>Removing network {network}
+ERROR: error while removing network: network {network} id xxxxxx has active endpoints
+</code></pre>
+<p>通过以下命令解决</p>
+<pre><code>docker network disconnect -f {network} {endpoint-name}
+</code></pre>
+<p><code>{endpoint-name}</code>字段通过命令<code>docker network inspect {network}</code>,在结果中查看<code>&quot;Containers&quot;</code>中的<code>&quot;Name&quot;</code>字段。</p>
+<p>之后启动Docker</p>
+<pre><code>docker-compose up -d
+</code></pre>
+<p>如果在启动后出现以下错误：</p>
+<pre><code>Creating network &quot;root_default&quot; with the default driver
+ERROR: Failed to Setup IP tables: Unable to enable SKIP DNAT rule: ... 
+</code></pre>
+<p>尝试通过重启Docker解决</p>
+<pre><code>sudo systemctl restart docker
+</code></pre>
+<p>参考来源：</p>
+<ol>
+<li><a href="https://www.cnblogs.com/Dong-Ge/p/9634351.html">docker 解决network has active endpoints</a></li>
+</ol>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[优化你的Word论文写作流程]]></title>
         <id>https://notes.canlv.top/post/优化你的Word论文写作流程/</id>
@@ -830,311 +863,6 @@ LTC1966的差分输入端对电压极为敏感，在正式通电之前一定要�
 </ul>
 <h1 id="license">License</h1>
 <p>本作品遵循MIT开源协议。您可以自由的再创作，但必须注明本作者。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2019年全国大学生电子设计竞赛-纸张计数显示装置(F题)-湖南赛区二等奖]]></title>
-        <id>https://notes.canlv.top/post/2019年全国大学生电子设计竞赛-纸张计数显示装置-F题/</id>
-        <link href="https://notes.canlv.top/post/2019年全国大学生电子设计竞赛-纸张计数显示装置-F题/">
-        </link>
-        <updated>2019-09-04T18:34:16.000Z</updated>
-        <summary type="html"><![CDATA[<p>今年的电子设计竞赛对我来说可谓是一波三折，准备了半年的电源题目，最终没有想到这道题被砍掉了。但是所幸的是在经过理性的题目选择与方案设计之后，比较顺利得完成了这一道题目。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>今年的电子设计竞赛对我来说可谓是一波三折，准备了半年的电源题目，最终没有想到这道题被砍掉了。但是所幸的是在经过理性的题目选择与方案设计之后，比较顺利得完成了这一道题目。</p>
-<!-- more -->
-<h4 id="本文已归档部分格式与图片可能无法正常显示">本文已归档，部分格式与图片可能无法正常显示</h4>
-<h1 id="题目选择与分析">题目选择与分析</h1>
-<h2 id="处境分析">处境分析</h2>
-<p>在电源题目被砍掉之后，我们队伍失去了最优势的项目。所以现在首先要做的就是明确自己所剩下的优势，由于我们前一个月刚刚参加完了「2019年全国生物医学工程创新设计竞赛」，制作了一款心电信号检测装置，所以可以明确下面我们的优势与弱项：</p>
-<p>优势：</p>
-<ol>
-<li>有微小信号的采集与放大经验</li>
-<li>有系统电源整体方案，可以提供各类正负电压</li>
-<li>有交流与直流的转换经验</li>
-<li>有RLC相关的电路设计与参数测量经验</li>
-<li>对于运放、MOSFIT等的使用更加熟悉</li>
-</ol>
-<p>弱势：</p>
-<ol>
-<li>相比于控制类题目的队伍，我们欠缺控制算法优化的经验</li>
-<li>我们缺乏控制所需的各类模块的使用经验</li>
-</ol>
-<h2 id="题目分析与选择">题目分析与选择</h2>
-<p>经过初步的优势与弱势分析过后，可以大致规划出下面这几道题目供选择：</p>
-<ul>
-<li>A 电动小车动态无线充电系统</li>
-<li>D 简易电路特性测试仪</li>
-<li>F 纸张计数显示装置</li>
-<li>H 模拟电磁曲射炮</li>
-</ul>
-<h3 id="a-电动小车动态无线充电系统">A 电动小车动态无线充电系统</h3>
-<p>{% note warning %}</p>
-<h4 id="题目a">题目A</h4>
-<p>{% fold 点击查看/隐藏题目 %}</p>
-<h5 id="任务">任务</h5>
-<p>设计并制作一个无线充电电动小车及无线充电系统，电动小车可采用成品车 改制，全车重量不小于 250 g，外形尺寸不大于 30cm×26cm，圆形无线充电装置 发射线圈外径不大于 20cm。无线充电装置的接收线圈安装在小车底盘上，仅采用 超级电容（法拉电容）作为小车储能、充电元件。如图 1 所示，在平板上布置直 径为 70cm 的黑色圆形行驶引导线（线宽≤2cm），均匀分布在圆形引导线上的 A、B、C、D 点（直径为 4cm 的黑色圆点）上分别安装无线充电装置的发射线 圈。无线充电系统由 1 台 5V 的直流稳压电源供电，输出电流不大于 1A。<br>
-<img src="/images/15676236588049.png" alt="" loading="lazy"></p>
-<h5 id="要求">要求</h5>
-<ol>
-<li>基本要求<br>
-（1）小车能通过声或光显示是否处在充电状态。<br>
-（2）小车放置在 A 点，接通电源充电，60 秒时断开电源，小车检测到发射线 圈停止工作自行起动，沿引导线行驶至 B 点并自动停车。<br>
-（3）小车放置在 A 点，接通电源充电，60 秒时断开电源，小车检测到发射线圈停止工作自行起动，沿引导线行驶直至停车（行驶期间，4个发射线圈均不工作），测量小车行驶距离 L1，L1 越大越好。</li>
-<li>发挥部分<br>
-（1） 小车放置在 A 点，接通电源充电并开始计时；60 秒时，小车自行起动 （小车超过 60 秒起动按超时时间扣分），沿引导线单向不停顿行驶直至 停车（沿途由 4 个发射线圈轮流动态充电）；180 秒时，如小车仍在行驶， 则断开电源，直至停车。测量小车行驶距离 L2，计算 L=L2-L1，L 越大越 好。<br>
-（2） 在发挥部分（1）测试中，测量直流稳压电源在小车开始充电到停驶时间 段内输出的电能 W，计算 K= L2/W，K 越大越好。<br>
-（3） 其他。</li>
-</ol>
-<h5 id="说明">说明</h5>
-<p>（1） 本题所有控制器必须使用 TI 公司处理器。<br>
-（2） 小车行驶区域可采用表面平整的三夹板等自行搭建，4 个发射线圈可放 置在板背面，发射线圈的圆心应分别与 A、B、C、D 圆点的圆心同心。<br>
-（3） 作品采用的处理器、小车全车重量、外形尺寸、发射线圈最大外形尺寸 及安装位置不满足题目要求的作品不予测试。<br>
-（4） 每次测试前，要求对小车的储能元件进行完全放电，从而确保测试时小 车无预先额外储能。<br>
-（5） 题中距离 L 的单位为 cm，电能 W 的单位为 Wh。<br>
-（6） 测试小车行驶距离时，统一以与引导线相交的小车最后端为测量点。<br>
-（7） 基本要求（2）测试中，小车停车后，其投影任一点与 B 点相交即认为 到达 B 点。<br>
-（8） 在测试小车行驶距离时，如小车偏离引导线（即小车投影不与引导线相交），则以该驶离点为该行驶距离的结束测试点。</p>
-<p><a href="https://www.nuedc-training.com.cn/index/news/details/new_id/146">🔗题目来源↗️</a><br>
-{% endfold %}{% endnote %}</p>
-<p>A题目的基本要求是要能够实现自动充电并延时后自动断电，并且还需要能够自动寻找轨迹进行转向。这里面要求了下面的功能：</p>
-<ul>
-<li>利用超级电容进行充放电<br>
-这部分对于我们来说并不困难，这部分我们已经准备过了，只是缺乏调试。</li>
-<li>通过线圈无线充电<br>
-无线充电这部分我们是缺乏使用经验的，并且我们没有无线充电的装置，需要加急购买。而且无线充电在系统中是最重要的一环，一旦出问题，很有可能前功尽弃。</li>
-<li>寻迹<br>
-寻迹这部分需要软件基础来进行测试，但是考虑到团队硬件是优势...</li>
-</ul>
-<h3 id="h-模拟电磁曲射炮">H 模拟电磁曲射炮</h3>
-<p>{% note warning %}</p>
-<h4 id="题目h">题目H</h4>
-<p>{% fold 点击查看/隐藏题目 %}</p>
-<h5 id="任务-2">任务</h5>
-<p>自行设计并制作一模拟电磁曲射炮（以下简称电磁炮），炮管水平方位及垂 直仰角方向可调节，用电磁力将弹丸射出，击中目标环形靶（见图 3），发射周 期不得超过 30 秒。电磁炮由直流稳压电源供电，电磁炮系统内允许使用容性储 能元件。<br>
-<img src="/images/15676258918387.png" alt="" loading="lazy"></p>
-<h5 id="要求-2">要求</h5>
-<p>电磁炮与环形靶的位置示意如图 1 及图 2 所示。电磁炮放置在定标点处，炮 管初始水平方向与中轴线夹角为 0°、垂直方向仰角为 0°。环形靶水平放置在 地面，靶心位置在与定标点距离 200cm≤d≤300cm，与中心轴线夹角a≤±30° 的范围内。</p>
-<ol>
-<li>基本要求<br>
-（1） 电磁炮能够将弹丸射出炮口。<br>
-（2） 环形靶放置在靶心距离定标点 200~300cm 间，且在中心轴线上的位置 处，键盘输入距离 d 值，电磁炮将弹丸发射至该位置，距离偏差的绝 对值不大于 50cm。<br>
-(3） 用键盘给电磁炮输入环形靶中心与定标点的距离 d 及与中心轴线的偏 离角度a，一键启动后，电磁炮自动瞄准射击，按击中环形靶环数计 分；若脱靶则不计分。</li>
-<li>发挥部分<br>
-（1） 在指定范围内任意位置放置环形靶（有引导标识，参见说明 2），一键 启动后，电磁炮自动搜寻目标并炮击环形靶，按击中环形靶环数计分， 完成时间≤30s。<br>
-（2） 环形靶与引导标识一同放置在距离定标点 d=250cm 的弧线上（以靶心 定位），引导标识处于最远位置。电磁炮放置在定标点，炮管水平方向与中轴线夹角a =-30°、仰角 0°。一键启动电磁炮，炮管在水平方向与中轴线夹角a从-30°至 30°、再返回-30°做往复转动，在转 动过程中（中途不得停顿）电磁炮自动搜寻目标并炮击环形靶，按击 中环形靶环数计分，启动至击发完成时间≤10s。<br>
-（3） 其他。</li>
-</ol>
-<h5 id="说明-2">说明</h5>
-<ol>
-<li>电磁炮的要求<br>
-（1） 电磁炮炮管长度不超过 20cm，工作时电磁炮架固定置于地面。<br>
-（2） 电磁炮口内径在 10-15mm 之间，弹丸形状不限。<br>
-（3） 电磁炮炮口指向在水平夹角及垂直仰角两个维度可以电动调节。<br>
-（4） 电磁炮可用键盘设置目标参数。<br>
-（5） 可检测靶标位置自动控制电磁炮瞄准与射击。<br>
-（6） 电磁炮弹丸射高不得超过 200cm。</li>
-<li>测试要求与说明<br>
-（1） 环形靶由 10 个直径分别为 5cm、10cm、15cm、… 50cm 的同心圆组成， 外径 50cm，靶心直径     5cm，参见图 3。<br>
-（2） 环形靶引导标识为直径 20cm 的红色圆形平板，在距靶心 30cm 处与 靶平面垂直固定安装，圆心距靶平面高度 30cm。放置时引导标识在 距定标点最远方向。参见图 1。<br>
-<img src="/images/15676260171279.png" alt="" loading="lazy"><br>
-（3） 弹着点按现场摄像记录判读。<br>
-（4） 每个项目可测试 2 次，选择完成质量好的一次记录并评分。<br>
-（5） 制作及测试时应佩带防护眼镜及安全帽等护具，并做好防护棚（炮口 前用布或塑料布搭制有顶且两侧下垂到地面的棚子，靶标后设置防反 弹布帘）等安全措施。电磁炮加电状态下现场人员严禁进入炮击区域。</li>
-</ol>
-<p><a href="https://www.nuedc-training.com.cn/index/news/details/new_id/153">🔗题目来源↗️</a><br>
-{% endfold %}<br>
-{% endnote %}</p>
-<p>H题目和A题目类似，考察的更多的是对于程序和算法的调控，没有发挥我们队伍电源与模拟小信号处理的优势。这里就不做细致的分析。</p>
-<h3 id="d-简易电路特性测试仪">D 简易电路特性测试仪</h3>
-<p>{% note warning %}</p>
-<h4 id="题目d">题目D</h4>
-<p>{% fold 点击查看/隐藏题目 %}</p>
-<p><a href="https://www.nuedc-training.com.cn/index/news/details/new_id/149">点击前往官网查看</a></p>
-<p>{% endfold %}<br>
-{% endnote %}</p>
-<p>D题是往年测量类的题目，这道题目对于准备这个方向的同学难度可能不太大，但是对于我们准备较少的队伍相对于有过经验的F题目来说，性价比不是高。</p>
-<h3 id="f-纸张计数显示装置">F 纸张计数显示装置</h3>
-<p>{% note warning %}</p>
-<h4 id="题目f">题目F</h4>
-<p>{% fold 点击查看/隐藏题目 %}</p>
-<p><a href="https://www.nuedc-training.com.cn/index/news/details/new_id/151">点击前往官网查看</a></p>
-<p>{% endfold %}<br>
-{% endnote %}</p>
-<p>接下来就要细致的分析一下F题了。根据题目的要求，我们需要制作下面的部分：</p>
-<ul>
-<li>按要求制作两块极板与导线</li>
-<li>制作微小电容容值测量电路</li>
-<li>对采集到的信号进行放大与ADC转换</li>
-<li>精度</li>
-</ul>
-<p>精度可以说是本道题目的灵魂了，从要求上可以看出来，纸张测量需要制作的电路并不复杂，这就必然会导致这道题目门槛的降低，所以精度与量程便成了区分能力的重要指标。</p>
-<p>但是，相比于上面提到的三个题目，F题可以说最适合我们制作。由于此前我们制作心电信号检测电路积攒的经验与各类运放的现有资源，我们可以在这道题目上发挥更多的优势。</p>
-<p>所以题目就选择了F题。</p>
-<h1 id="方案论证与选择">方案论证与选择</h1>
-<h2 id="极板厚度与电容的关系">极板厚度与电容的关系</h2>
-<p>电容值是我们生活中普遍存在的客观参数，在研究时必须将其模型化。所以我们建立一个理想化模型。本题是测量纸张厚度，所以建立电容测厚的模型。在两个极板间填充一定的介质（真空、空气、纸张等），然后可以建立下图的模型：</p>
-<figure data-type="image" tabindex="1"><img src="/images/notes1:2%E5%B0%BA%E5%AF%B8.png" alt="notes1:2尺寸" loading="lazy"></figure>
-<p>通过建立模型，我们就可以列出电容的公式<sup><a href="https://wenku.baidu.com/view/695a9f71580102020740be1e650e52ea5518cebc.html?rec_flag=default&amp;sxts=1567694011579">引用链接</a></sup>：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><mfrac><mrow><msub><mi>ε</mi><mn>0</mn></msub><msub><mi>ε</mi><mi>r</mi></msub><mi>A</mi></mrow><mi>d</mi></mfrac><mo>=</mo><mfrac><mrow><mi>ε</mi><mi>A</mi></mrow><mi>d</mi></mfrac></mrow><annotation encoding="application/x-tex">C= \frac {ε_0ε_rA}{d}= \frac {εA}{d} 
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.04633em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">ε</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">ε</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.04633em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">ε</span><span class="mord mathdefault">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-<p>其中：</p>
-<ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span> 为实际容值</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 为极板相对覆盖面积</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span></span></span></span> 为极板间的距离</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">ε_r</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">ε</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为相对介电常数</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">ε_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">ε</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为真空介电常数，其值为 $ ε_0=8.85(pF/m) $</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">ε</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ε</span></span></span></span> 为电极板间介质的介电常数 $ ε=ε_0ε_r $</li>
-</ul>
-<p>根据公式，我们发现当两板间的介质、极板面积不变时，极板间的间距<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span></span></span></span>与电容<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span>之间便成了等比例线性关系：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mi>C</mi><mi>d</mi></mfrac><mo>=</mo><mi>ε</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">\frac {C}{d} = εA 
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.04633em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">ε</span><span class="mord mathdefault">A</span></span></span></span></span></p>
-<p>所以纸张厚度的测量就间接转化为对电容的测量。</p>
-<h2 id="电容的测量方法">电容的测量方法</h2>
-<p>电容传感器有多种转换输出电路，它借助于这种信号调理电路把微小的电容变化转换成与之正比的电压、电流或频率输出变化：</p>
-<ul>
-<li>运算放大器测量电路</li>
-<li>电桥电路</li>
-<li>二极管T形网络</li>
-<li>调频电路</li>
-<li>谐振电路</li>
-</ul>
-<p>我们的作品选择的是运算放大电路。</p>
-<h1 id="电路设计与搭建">电路设计与搭建</h1>
-<h2 id="运算放大电路">运算放大电路</h2>
-<p>基本运算放大电路可以参考下图<sup><a href="https://wenku.baidu.com/view/695a9f71580102020740be1e650e52ea5518cebc.html?rec_flag=default&amp;sxts=1567694011579">引用链接</a></sup>：</p>
-<figure data-type="image" tabindex="2"><img src="/images/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-09-06%20%E4%B8%8A%E5%8D%881.25.07.png" alt="屏幕快照 2019-09-06 上午1.25.07" loading="lazy"></figure>
-<p>利用运放放大倍数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span></span></span>与输入阻抗<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">Z_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>都很高的特点，可以将其作为比较理想化的电容测量电路。</p>
-<p>图中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">C_x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为电容传感器，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">a</span></span></span></span>为虚地点，由于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">Z_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>很高，所以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><msub><mi>U</mi><mi>a</mi></msub><mo>˙</mo></mover><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\dot {U_a}=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.07019em;vertical-align:-0.15em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9201900000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">˙</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>I</mi><mo>˙</mo></mover><mo>≈</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\dot {I} \approx 0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9201900000000001em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9201900000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.027780000000000013em;">˙</span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，根据克希霍夫定律：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mover accent="true"><msub><mi>U</mi><mn>0</mn></msub><mo>˙</mo></mover><mover accent="true"><msub><mi>U</mi><mi>i</mi></msub><mo>˙</mo></mover></mfrac><mo>=</mo><mo>−</mo><mfrac><msub><mi>Z</mi><mi>x</mi></msub><msub><mi>Z</mi><mn>0</mn></msub></mfrac><mo>=</mo><mo>−</mo><mfrac><msub><mi>C</mi><mn>0</mn></msub><msub><mi>C</mi><mi>x</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">\frac {\dot {U_0}}{\dot {U_i}} = - \frac {Z_x}{Z_0} = - \frac {C_0}{C_x} 
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.55738em;vertical-align:-0.9601900000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5971899999999999em;"><span style="top:-2.18981em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9201900000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">˙</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9201900000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">˙</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9601900000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord">−</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><msub><mi>U</mi><mn>0</mn></msub><mo>˙</mo></mover><mo>=</mo><mo>−</mo><mover accent="true"><msub><mi>U</mi><mi>i</mi></msub><mo>˙</mo></mover><mfrac><msub><mi>C</mi><mn>0</mn></msub><msub><mi>C</mi><mi>x</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">\dot{U_0} =  - {\dot {U_i}} \frac {C_0}{C_x}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.07019em;vertical-align:-0.15em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9201900000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">˙</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.19633em;vertical-align:-0.8360000000000001em;"></span><span class="mord">−</span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9201900000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">˙</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-<p>当传感器只是一个平板电容，根据极板与电容厚度的关系：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>x</mi></msub><mo>=</mo><mfrac><mrow><mi>ε</mi><mi>S</mi></mrow><mi>d</mi></mfrac></mrow><annotation encoding="application/x-tex">C_x = \frac {εS}{d} 
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.04633em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">ε</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-<p>可以推导出输出电压与极板距离<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span></span></span></span>成线性关系：</p>
-<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><msub><mi>U</mi><mn>0</mn></msub><mo>˙</mo></mover><mo>=</mo><mo>−</mo><mover accent="true"><msub><mi>U</mi><mi>i</mi></msub><mo>˙</mo></mover><mfrac><msub><mi>C</mi><mn>0</mn></msub><mrow><mi>ε</mi><mi>S</mi></mrow></mfrac><mi>d</mi></mrow><annotation encoding="application/x-tex">\dot {U_0} =  - {\dot {U_i}} \frac {C_0}{εS}d
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.07019em;vertical-align:-0.15em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9201900000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">˙</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.04633em;vertical-align:-0.686em;"></span><span class="mord">−</span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9201900000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">˙</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">ε</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathdefault">d</span></span></span></span></span></p>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-选取运放时应尽量选用放大倍数与输入阻抗尽量高的器件，因为上述公式是在这两个趋向于正无穷（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">K \to \infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord">∞</span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>i</mi></msub><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">Z_i \to \infty</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">Z</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord">∞</span></span></span></span>）的条件下推到出的，实际使用时，会有一定的测量误差，在极高精度的环境下需要慎重选择。<br>
-{% endnote %}</p>
-<p>设计至此，我们应该可以获得一个由恒定交流信号输入（可以使用STM32通过运放后生成），通过电容传感器和运放之后获得的与极板距离d成比例的输出交流信号<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><msub><mi>U</mi><mi>o</mi></msub><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">\dot {U_o}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.07019em;vertical-align:-0.15em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9201900000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">˙</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span>。现在我们来处理输出交流信号<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><msub><mi>U</mi><mi>o</mi></msub><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">\dot {U_o}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.07019em;vertical-align:-0.15em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9201900000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">o</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.13889em;">˙</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span>。</p>
-<h2 id="交流与直流的转换">交流与直流的转换</h2>
-<p>一个交流信号对ADC来说并不是很理想，所以需要对交流信号进行转换。利用运放，有很多方法进行转换，有的会损失掉部分交流信息。我们使用了一种在电源领域常用的交流采样的方法——RMS真有效值转换法。</p>
-<p>靠着我们之前的技术积累，利用LTC1966真有效值转换芯片，我们可以检测从零点几到上百的电压与电流信号的真有效值，可谓是相当好用的。具体的芯片应用参照下图：</p>
-<figure data-type="image" tabindex="3"><img src="/images/15676999250989.png" alt="" loading="lazy"></figure>
-<p>芯片的应用没什么好说的，参照芯片datasheet进行设计就好。由于LTC1966的差分输入范围比较小，使用时一定要先在低压环境调整好互感器的比例，避免烧坏脆弱的芯片。</p>
-<p>{% note info %}<br>
-<strong>注意：</strong><br>
-在使用LTC1966时你可能会遇到是否需要差分输入的问题，或者经常出现烧毁的问题，你可以尝试参考下面这个链接：<a href="https://www.canlv.top/page/power/LTC1966-a-problem-5v-AC-RMS-DC.html">关于LTC1966典型电路5v-AC-RMS-DC转换器烧坏的问题</a><br>
-{% endnote %}</p>
-<h2 id="放大电路">放大电路</h2>
-<p>放大电路也没有什么特别需要注意的，按照常规步骤进行设计，将LTC1966计算到的RMS信号进行放大，可以适当添加低通滤波器。如果有运放剩余，可以酌情添加一个跟随器。</p>
-<h2 id="供电系统">供电系统</h2>
-<p>供电系统在运放的应用中尤为重要，特别是对于微小信号的处理电路。运放的供电中一旦出现纹波与尖峰，会对输出信号产生不可预料的影响。所以，在电源的选择上应避免开关电源直接进行供电，尽量使用线性稳压电源。</p>
-<p>本系统中需要使用的电压有一下：</p>
-<ul>
-<li>5V</li>
-<li>3.3V</li>
-</ul>
-<p>对输入电压并没有要求，所以系统供电可以全部采用AMS1117来进行电压转换。其使用方法没有特殊要求。按照datasheet使用即可。</p>
-<p>至此，系统电路的设计与搭建已经全部完成。将这些硬件搭建完成后就可以对软件进行调试了。</p>
-<h1 id="软件与算法调试">软件与算法调试</h1>
-<p>软件承接了校准与测试等功能，流程图如下：</p>
-<pre><code class="language-flow">st=&gt;start: 程序开始
-op1=&gt;operation: 录入校准数据
-op2=&gt;operation: 显示测量到的纸张数
-op3=&gt;operation: 发出蜂鸣声提示电极板短路
-cond1=&gt;condition: 电极板是否短路
-
-st-&gt;op1-&gt;cond1
-cond1(no)-&gt;op2-&gt;cond1
-cond1(yes)-&gt;op3-&gt;cond1
-</code></pre>
-<p>作品中的输入交流信号是通过STM32自带的DAC实现的交流方波信号，但是由于STM32管脚的带载能力不足，所以在MCU输出后加入了一级跟随器提高带载能力。</p>
-<p>接下来的软件算法就是对ADC采样的优化，输入ADC前的信号一定要首先通过硬件调整到稳定且没有杂波的状态，这样会大大简化数字滤波的压力。软件中使用了平均值、中值、去掉最值、大量取样等的各种数字滤波的算法组合实现，达到了不错的滤波效果。</p>
-<h1 id="测量结果">测量结果</h1>
-<p>我们在省内参加比赛时的现场测量结果如下，基础与发挥测量项目中，只有一项没有达标，与实验室测量结果相同：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">测量纸张数</th>
-<th style="text-align:center">测得纸张数</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
-<td style="text-align:center">3</td>
-<td style="text-align:center">3</td>
-</tr>
-<tr>
-<td style="text-align:center">5</td>
-<td style="text-align:center">5</td>
-</tr>
-<tr>
-<td style="text-align:center">7</td>
-<td style="text-align:center">7</td>
-</tr>
-<tr>
-<td style="text-align:center">9</td>
-<td style="text-align:center">9</td>
-</tr>
-<tr>
-<td style="text-align:center">15</td>
-<td style="text-align:center">15</td>
-</tr>
-<tr>
-<td style="text-align:center">17</td>
-<td style="text-align:center">17</td>
-</tr>
-<tr>
-<td style="text-align:center">19</td>
-<td style="text-align:center">20</td>
-</tr>
-<tr>
-<td style="text-align:center">21</td>
-<td style="text-align:center">21</td>
-</tr>
-<tr>
-<td style="text-align:center">23</td>
-<td style="text-align:center">23</td>
-</tr>
-<tr>
-<td style="text-align:center">25</td>
-<td style="text-align:center">25</td>
-</tr>
-<tr>
-<td style="text-align:center">27</td>
-<td style="text-align:center">27</td>
-</tr>
-<tr>
-<td style="text-align:center">30</td>
-<td style="text-align:center">30</td>
-</tr>
-<tr>
-<td style="text-align:center">50</td>
-<td style="text-align:center">49</td>
-</tr>
-</tbody>
-</table>
-<h1 id="作品总结">作品总结</h1>
-<p>这次比赛对于我本人来说可谓是多灾多难。</p>
-<p>其实在8月7日拿到题目的时候，第一反应便是后悔。因为暑假之前通过了华为的实习生面试，在我已经有了竞赛经历的时候，我更应该去提升自己的实习经历。但是当时自己还是一咬牙留下来参加比赛，为了能够继续把电源做得更好。我也投入了很大的精力，准备了许多备赛模块。但是很不幸，没有了电源题，这算是这次竞赛最大的遗憾。</p>
-<p>在硬着头皮上之后，结果也还算令人满意，而且多多少少还有一些感悟。</p>
-<p>拿到题目一直就在心里告诉自己不要慌张，办法总比问题多。后来硬件出现致命性问题的时候，也在心里告诫自己：「坚持一下，一定可以解决的」。</p>
-<p>临近交作品，问题一个一个都被解决了，心情也愉快起来。看着自己一点点做好的作品，期待着它能够在现场测试中大放光彩的时候，就像期盼着自己的孩子能够出人头地一样，别有一番滋味。</p>
-<p>最后作品贴了封条之后，我独自一人看着那白纸黑字上写着大大的「封条」，神情也有点恍惚。这个小箱子，预示着我大学生活的结束，预示着我为了大一目标奋斗的结束。接下来的休息之后，我就要为了我的下一个目标努力了。</p>
-<p>迷茫伴随了我很长时间，错过了很多机会，做过了很多错误的选择。但是，也唯有「错过」，才会不错过吧。祝未来好运。<br>
-<img src="/images/IMG_0690.jpeg" alt="IMG_0690" loading="lazy"></p>
-<p>{% note info %}<br>
-本文使用DISQUS评论系统，您可能需要科学上网才能留言。<br>
-{% endnote %}</p>
 ]]></content>
     </entry>
 </feed>
