@@ -3,7 +3,7 @@
     <meta charset="utf-8"/>
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>解决Docker removing network时has active endpoints错误 | Canaan&#39;s Notes</title>
+<title>在特殊的2020年毕业了 | Canaan&#39;s Notes</title>
 <link rel="shortcut icon" href="https://notes.canlv.top/favicon.ico?v=1591278279542">
 <link href="https://cdn.bootcss.com/font-awesome/5.11.2/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="https://notes.canlv.top/styles/main.css">
@@ -99,46 +99,57 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    解决Docker removing network时has active endpoints错误
+                    在特殊的2020年毕业了
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2020-05-18 ·
+                        · 2020-06-04 ·
                     </time>
                     
-                        <a href="https://notes.canlv.top/tag/ItZ6fCwE8/" class="post-tags">
-                            # 运维
-                        </a>
-                    
-                        <a href="https://notes.canlv.top/tag/5QvchZKItP/" class="post-tags">
-                            # Linux
+                        <a href="https://notes.canlv.top/tag/liu-shui-zhang/" class="post-tags">
+                            # 流水账
                         </a>
                     
                 </div>
                 <div class="post-content">
-                    <p>Docker在使用关闭命令<code>docker-compose down</code>时出现错误</p>
+                    <p>毕业论文洋洋洒洒写了两万字，配上一个花里胡哨的Keynote，就算是顺利毕业了。</p>
 <!-- more -->
-<pre><code>Removing network {network}
-ERROR: error while removing network: network {network} id xxxxxx has active endpoints
-</code></pre>
-<p>通过以下命令解决</p>
-<pre><code>docker network disconnect -f {network} {endpoint-name}
-</code></pre>
-<p><code>{endpoint-name}</code>字段通过命令<code>docker network inspect {network}</code>,在结果中查看<code>&quot;Containers&quot;</code>中的<code>&quot;Name&quot;</code>字段。</p>
-<p>之后启动Docker</p>
-<pre><code>docker-compose up -d
-</code></pre>
-<p>如果在启动后出现以下错误：</p>
-<pre><code>Creating network &quot;root_default&quot; with the default driver
-ERROR: Failed to Setup IP tables: Unable to enable SKIP DNAT rule: ... 
-</code></pre>
-<p>尝试通过重启Docker解决</p>
-<pre><code>sudo systemctl restart docker
-</code></pre>
-<p>参考来源：</p>
-<ol>
-<li><a href="https://www.cnblogs.com/Dong-Ge/p/9634351.html">docker 解决network has active endpoints</a></li>
-</ol>
+<p>这四年时间很快就结束了，总觉得得写点什么纪念一下，就有了这篇文章。没什么主题，想到什么写什么吧。</p>
+<h1 id="特殊的年份">特殊的年份</h1>
+<p>2020年现在走过了5个月，却可以说是近几年最特殊的一年了。扯远了说，什么肺炎、贸易战、WHO、香港、黑人...这历史考点可太多了。直接的影响就是每天在家的健康打卡和在家里完成毕业论文。</p>
+<p>说起论文，提前在学校完成了大部分设计，在家里就轻松了很多。只要写写代码、写写论文就好了。因为作品的压力没有很大，早早就准备论文的编写了，这次编写的时候注意将自己的工作流程规范化，在写之前就考虑了很多问题，比如：</p>
+<ul>
+<li>目录怎么能统一自动更新</li>
+<li>老师如果让调整参考文献顺序怎么快速修改</li>
+<li>如果调整某种样式，怎么快速统一修改</li>
+<li>要不要控制修改版本</li>
+<li>不同设备看起来不一样怎么办</li>
+<li>参考文献能不能自动格式</li>
+<li>....</li>
+</ul>
+<p>这些提前的准备给我在后期提供了非常大的便利，很多同学不以为然，但是当老师在提交前一天晚上给了你一个大批量批住的Word，或者突然要求砍掉一半的参考文献的时候就会发现，这些工作能让你避免很多加班。</p>
+<p>我甚至在答辩的时候出现问题。由于我做的黑色背景的Keynote老师投影之后看不清，希望我改成白色背景，而这时已经开始了第一位同学的答辩，时间紧迫。但是我在制作Keynote时都有备份，不同的素材只需要替换即可完成，所以很快便切换完成了。</p>
+<h1 id="实验室">实验室</h1>
+<p>毕业作品能够顺利完成，靠了很多学长、学姐们对我的引导。从三年前一次偶然的聚餐，认识了第一位老乡黄学长，跟着他学习了很多技巧，最重要的是在实验室的环境中培养起了对新知识的自学思维，能够根据自己的实现目标和功能目标学习对应的知识。不再是现今教育体系中庞大的系统性学习——固然这是很重要的——而是根据你的目的去针对性地学习，之后慢慢扩展学习面，从小到大。后来逐渐熟练了使用各种PCB设计工具，同步着学校的单片机课程，制作出了自己的第一块电路板。</p>
+<figure data-type="image" tabindex="1"><img src="https://i.loli.net/2020/06/04/GEc4gtFbJZajysB.png" alt="矩阵按键" loading="lazy"></figure>
+<p>很简单的矩阵按键，搭配51单片机，但是培养了很大的兴趣。</p>
+<p>后来逐渐接触了更多的东西，那时候充满了兴趣，搭建起了个人网站，做了很多小玩意儿，很有趣。正好老吴送了我一块树莓派3B+，对Linux终端的使用也基本摸透了，闲来无事总会来小鸡上搞些奇奇怪怪的服务。</p>
+<p>一开始的PCB画的很随便，虽然已经很注意原件的排布、走线了，但是还是缺乏美感。后来参加比赛，模仿着网上卖很贵（100多块）的一块STM32最小系统板，画了自己的一块，才慢慢培养起设计的美感。发现人家卖的贵也不是没有道理的。</p>
+<figure data-type="image" tabindex="2"><img src="https://i.loli.net/2020/06/04/AnmLi739kyKJ2QW.png" alt="STM32最小系统" loading="lazy"></figure>
+<h1 id="朋友">朋友</h1>
+<blockquote>
+<p>朋友不多，但都不错。————我</p>
+</blockquote>
+<p>一句话总结就是这样子，人际关系我比较笨，只能凭着自己的感觉来，多点尊重和包容总不会错。</p>
+<p>去过了很多地方玩，桂林、中山、广州、南京、张家界、武汉、海口，几乎全部都是和老吴一起去的，每次去玩都很有意思，跟上他总不会不知道去哪里，他总能找到有意思的地方，我懒得找，网上看到推荐总是嗤之以鼻。他跟着我总是能去到想去的地方，他天生路痴，而我时时刻刻记着东南西北。两个人出去玩总会有一些动力，不然一个人就变成了换个地方玩手机了。</p>
+<figure data-type="image" tabindex="3"><img src="https://i.loli.net/2020/06/04/iq7OTQMjU26zLdV.jpg" alt="大厦顶层的风光" loading="lazy"></figure>
+<p>有谁会疯突然穿过一半的工地爬到100多层的楼顶呢？嗯，我们会。</p>
+<p>很开心上班了依然能够在同一个地方，不过，他家就在不远处啊。</p>
+<h1 id="理想">理想</h1>
+<p>还有理想吗？还有吧。理想是什么呢？我觉得既然是理想了，目标一定很远，不是很快就能实现，既然这样，不要忘记理想，慢慢靠近。</p>
+<p>人生在变，但是也都在我的计划之后中，虽然有一些突发事件，但是也有一些意想不到，总之还算顺利。很多人放弃了理想，是因为轨迹因为一次次突变而偏离方向，但是没有矫正。希望未来还能够维持住吧。</p>
+<h1 id="最后">最后</h1>
+<p>想到很多事情，但又觉得写出来谁又会在意呢，况且自己都不在意。留在记忆里逐渐退化好了...</p>
 
                 </div>
             </article>
@@ -147,8 +158,8 @@ ERROR: Failed to Setup IP tables: Unable to enable SKIP DNAT rule: ...
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://notes.canlv.top/post/优化你的Word论文写作流程/" class="post-title gt-a-link">
-                    优化你的Word论文写作流程
+                <a href="https://notes.canlv.top/post/解决Docker-removing-network时has-active-endpoints错误/" class="post-title gt-a-link">
+                    解决Docker removing network时has active endpoints错误
                 </a>
             </div>
         
